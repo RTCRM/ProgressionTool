@@ -1,0 +1,7 @@
+ng build --base-href /understanding-ipf-progression/ --deploy-url /understanding-ipf-progression/ --prod
+
+ng g component component-name
+
+npm install --save-dev @types/google.analytics
+
+ng.probe($0).componentInstance.grid.show()
