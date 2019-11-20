@@ -1,0 +1,135 @@
+<section>
+  <div class="container-fluid video-background">
+    <div class="row">
+      <div class="video-container">
+        <img src="assets/heroes/section6-mobile-hero.png" class="d-md-none" alt="">
+        <video [muted]="true" muted autoplay loop playsinline id="video-background-6">
+          <source src="assets/videos/section-6-hero.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+  <nav class="container-fluid">
+    <div class="row">
+      <div class="mobile-hero d-md-none">
+        <img src="assets/heroes/section6-mobile-hero.png" alt="">
+      </div>
+      <div class="container content">
+        <div class="row justify-content-center">
+          <div class="title col-lg-10">
+            <div class="id">
+              <div class="label">
+                <p>6</p>
+              </div>
+            </div>
+            <div class="text normal">
+              <h1>Slowing Progression and Lowering Risk of Acute Exacerbations</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid main">
+    <div class="row overflow-hidden">
+      <div class="container content">
+        <div class="row justify-content-center">
+          <div class="text copy col-lg-9">
+            <p><strong>Now that you understand IPF progression and why it’s so serious, it’s time to do something about it. </strong></p>
+            <br/>
+            <p>While there is no cure for IPF, there are treatment options available that have been shown to slow IPF progression. The sooner you begin treatment, the sooner you may start slowing IPF progression. </p>
+            <br/>
+            <p><strong>Take the next step by clicking the link below to learn more about slowing IPF progression. </strong></p>
+            <br/>
+            <a class="cta" href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read About a Treatment for IPF</a>
+          </div>
+          <div class="quote col-md-10">
+            <div class="box">
+              <p>“Because IPF gets worse over time, it's better to start medication earlier to help slow down the loss of lung function. I decided to begin treatment and, in hindsight, I wish I’d started even sooner.”</p>
+              <br />
+              <p>&mdash; Evelyn, <span class="small">PERSON LIVING WITH</span><span> IPF</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="share col-12 d-md-none">
+            <div id="social-media">
+              <div id="facebook">
+                <a [routerLink]="" (click)="share('facebook')">
+                  <div id="facebook-icon-container"></div>
+                </a>
+              </div>
+              <div id="twitter">
+                <a [routerLink]="" (click)="share('twitter')">
+                  <div id="twitter-icon-container"></div>
+                </a>
+              </div>
+            </div>
+            <p><strong>Share with Friends and Family</strong></p>
+          </div>
+          <div class="rating col-lg-10">
+            <p><strong id="rating-title">Was this information helpful? Please rate it.</strong></p>
+            <div class="stars">
+              <a href="#" class="star" id="star-1"><img src="assets/icons/rate-star-empty.svg" alt=""></a>
+              <a href="#" class="star" id="star-2"><img src="assets/icons/rate-star-empty.svg" alt=""></a>
+              <a href="#" class="star" id="star-3"><img src="assets/icons/rate-star-empty.svg" alt=""></a>
+              <a href="#" class="star" id="star-4"><img src="assets/icons/rate-star-empty.svg" alt=""></a>
+              <a href="#" class="star" id="star-5"><img src="assets/icons/rate-star-empty.svg" alt=""></a>            
+            </div>
+            <p><strong id="rating-text">&nbsp;</strong></p>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="helpful-links col-lg-10">
+            <div class="top">HELPFUL LINKS</div>
+              <div class="bottom">
+              <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">
+                    <div class="img-container">
+                      <div class="related" id="related-1"></div>
+                    </div>
+                  </a>
+                  <a class="category" href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">
+                    <p>Treating IPF</p>
+                  </a>
+                  <a class="article" href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">
+                    <h3>Learn About a Prescription IPF Treatment</h3>
+                  </a>
+                </div>
+                <div class="col-12 col-md-4">
+                  <a href="/lifestyle/treatment-strategies" (click)="track('Taking charge of your diagnosis')">
+                    <div class="img-container">
+                      <div class="related" id="related-2"></div>
+                    </div>
+                  </a>
+                  <a class="category" href="/lifestyle" (click)="track('Taking charge of your diagnosis')">
+                    <p>Living with IPF</p>
+                  </a>
+                  <a class="article" href="/lifestyle/treatment-strategies" (click)="track('Taking charge of your diagnosis')">
+                    <h3>Taking Charge of Your Diagnosis and Treatment </h3>
+                  </a>
+                </div>
+                <div class="col-12 col-md-4">
+                  <a href="/sign-up" (click)="track('Symptoms of IPF')">
+                    <div class="img-container">
+                      <div class="related" id="related-3"></div>
+                    </div>
+                  </a>
+                  <a class="category" href="/sign-up" (click)="track('Symptoms of IPF')">
+                    <p>Register Now</p>
+                  </a>
+                  <a class="article" href="/sign-up" (click)="track('Symptoms of IPF')">
+                    <h3>Sign Up to Receive Patient Stories Right in Your Inbox </h3>
+                  </a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+@import "src/assets/scss/section.scss";
+
+section {
+    nav {
+        background: url('/assets/heroes/section0-hero.jpg') center top no-repeat;
+        .content {
+            .title {
+                .label {
+                    width: 0;
+                    height: 0;
+                    // background-color: initial;
+                }
+                .text {
+                    .scroll {
+                        position: absolute;
+                        right: 100px;
+                        bottom: 50px;
+                        margin-bottom: 0;
+                        font: 15px/18px $lato;
+                        color: #4d4d4d;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Desktop
+@media (min-width: 1025px) { 
+    section nav .content .title .text h1 {
+        background: url('/assets/elements/down-arrows.png') top right no-repeat;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    section {
+        background-color: transparent;
+        nav {
+            .mobile-hero {
+                position: fixed;
+                z-index: -1;
+            }
+            .content {
+                .title {
+                    bottom: 0;
+                    .id {
+                        margin-top: 0;
+                    }
+                    .text {
+                        h1 {
+                            font-size: 9.4vw;;
+                            line-height: 12vw;    
+                        }
+                    }
+                }
+            }
+        }
+        .main {
+            .content {
+            }
+        }
+    }
+}

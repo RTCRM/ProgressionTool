@@ -1,0 +1,109 @@
+@import "src/assets/scss/section.scss";
+
+
+section {
+    nav {
+        padding-top: 50px;
+        .content {
+            height: initial;
+            height: auto;
+            .title {
+                position: initial;
+                .label {
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+    .main {
+        .content {
+            margin-top: initial;
+            .row {
+                text {
+                    padding: 30px 50px;
+                }
+            }
+        }
+    }
+    footer {
+        margin-top: 80px;
+        .content {
+            .callout {
+                h3 {
+                    width: 71.65%;            
+                }
+                a {
+                    width: 28.35%;
+                    margin: 28px 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024.98px) {
+    section {
+        nav {
+            .content {
+                .title {
+                    .label {
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+        footer {
+            margin-top: 55px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    section {
+        nav {
+            padding-top: 35px;
+            .content {
+                .title {
+                    .id {
+                        margin-top: 0;
+                    }
+                    .label {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        footer {
+            margin-top: 35px;
+            .content {
+                .callout {
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    text-align: center;
+                    h3 {
+                        width: 90%;
+                        margin-top: 20px;
+                        font-size: $mobile-font-size;
+                        line-height: $mobile-line-height;
+                    }
+                    a {
+                        width: auto;
+                        padding: 0 20px;
+                        margin: 20px 0;
+                        font-size: 3.47vw;
+                        line-height: 8.68vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    section nav .content .title {
+        position: static;
+        left: 0;
+        transform: none;
+    }
+}

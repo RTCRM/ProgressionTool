@@ -1,0 +1,83 @@
+<section>
+  <nav class="container-fluid">
+    <div class="row">
+      <div class="container content">
+        <div class="row justify-content-center">
+          <div class="title col-lg-10">
+            <div class="id">
+              <div class="label">
+                <p>1</p>
+              </div>
+            </div>
+            <div class="text normal">
+              <h1>What Is IPF Progression?</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid main">
+    <div class="row overflow-hidden">
+      <div class="container content">
+        <div class="row position-relative justify-content-center">
+          <div class="text copy col-lg-9">
+            <p>Before learning about how IPF progresses, let’s start by defining what progression is. Progression means
+              that IPF will continue to worsen over time and cause permanent and irreversible damage to the lungs. This
+              progression can present itself many different ways.</p>
+            <br>
+            <p>Some people may notice worsening symptoms, see changes in <a tabindex="-1" [routerLink]="" hint-data="hint-1" (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like high-resolution computed
+              tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
+              may not notice any signs of progression for a long time.</p>
+          </div>
+          <div tabindex class="hint col-lg-9" id="hint-1">
+            <div class="arrow"></div>
+            <div class="box">
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <h4>HELPFUL HINT</h4>
+              <p><strong class="orange">Tests</strong> used to detect IPF progression include:</p>
+              <ul>
+                <li>HRCT scans</li>
+                <li>Pulse oximetry (measured at rest and with exertion)</li>
+                <li>Exercise/walking tests</li>
+                <li>Spirometry (forced vital capacity [FVC]) </li>
+                <li>DLCO</li>
+                <li>Lung volume measurement (total lung capacity [TLC])</li>
+                <li>Arterial blood gas testing</li>
+                <li>Questionnaire, like the <i>University of California San Diego Shortness of Breath Questionnaire</i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center squares">
+          <div class="col square left" id="square-1">
+            <img src="assets/squares/image001.jpg" alt="">
+          </div>
+          <div class="col square" id="square-2">
+            <img src="assets/squares/image002.jpg" alt="">
+          </div>
+          <div class="col square right" id="square-3">
+            <img src="assets/squares/image003.jpg" alt="">
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="text copy col-lg-9">
+            <p class="last">No matter how IPF affects you, it’s important to understand that <strong>the disease is always progressing at varying rates, which is why it’s so important to take action early.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid">
+    <div class="row">
+      <div class="container content">
+        <div class="row justify-content-center">
+          <div class="callout col-lg-9">
+            <h3>Take action by reading about a treatment that may help slow IPF progression.</h3>
+            <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read More Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>

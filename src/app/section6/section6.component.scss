@@ -1,0 +1,325 @@
+@import "src/assets/scss/section.scss";
+
+section {
+    .video-background {
+        position: absolute;
+        .video-container {
+            width: 100%;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+            video {
+                position: absolute;
+                width: 100%;
+            }
+        }
+    }
+    nav {
+        .content {
+            .title {
+                bottom: -120px;
+            }
+        }
+    }
+    .main {
+        background: url('/assets/main-site/bg-template.png') center bottom no-repeat;
+        background-size: contain;
+        .content {
+            margin-top: 120px;
+            .row {
+                text {
+                    padding: 30px 50px;
+                }
+                .quote {
+                    margin: 80px 0;
+                    .box {
+                        padding: $normal-line-height 40px;
+                        p:first-of-type {
+                            text-align: left;
+                        }
+                    }
+                }
+                .cta {
+                    width: 100%;
+                    display: inline-block;
+                    text-align: center;
+                    background-color: #f89226;
+                    font: 20px/50px "Lato Heavy", sand-serif;
+                    color: #fff;
+                    box-shadow: 3px 3px 0px 0px rgba(248, 146, 38, 0.4);
+                    margin-bottom: 3px;
+                }
+                .rating {
+                    text-align: center;
+                    .stars {
+                        unicode-bidi: bidi-override;
+                        direction: rtl;
+                        margin-bottom: 1em;
+                        .star:hover:before, .star:hover ~ .star:before {
+                            content: "";
+                            position: absolute;
+                            width: 42px;
+                            height: 42px;
+                            left: 4px;
+                            top: -10px;
+                            background-image: url('/assets/icons/rate-star-filled.svg');
+                        }
+                        .off {
+                            cursor: auto;
+                        }
+                        img {
+                            width: 42px;
+                            margin: 4px;
+                        }
+                    }
+                    
+                    p {
+                        font: $normal-font-size/$normal-line-height $lato-heavy;
+                    }
+                    p:last-of-type {
+                        border-bottom: 1px solid #b7b7b7;
+                        padding-bottom: 20px;
+                        margin-bottom: 50px;
+                    }
+                    #rating-text {
+                        opacity: 0;
+                        transition: opacity .5s;
+                        &.on {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .helpful-links {
+                    text-align: center;
+                    .top {
+                        height: 104px;
+                        border-top-left-radius: 8px;
+                        border-top-right-radius: 8px;
+                        background: url(/assets/main-site/top-related.png) center center no-repeat;
+                        font: 28px/85px $klinicslab-bold;
+                        color: #fff;
+                        background-size: auto 104px;
+                        margin-bottom: -1px;
+                    }
+                    .bottom {
+                        background-color: #fff;
+                        border-bottom-left-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        margin-bottom: 60px;
+                        padding: 30px 0;
+                        a {
+                            .img-container {
+                                height: 140px;
+                                overflow: hidden;
+                                #related-1 {
+                                    background-image: url(/assets/main-site/related-001.jpg);
+                                }
+                                #related-2 {
+                                    background-image: url(/assets/main-site/taking-charge-Thumb.jpg);
+                                }
+                                #related-3 {
+                                    background-image: url(/assets/main-site/sign-up-Thumb.jpg);
+                                }
+                                .related {
+                                    height: 100%;
+                                    -webkit-transition: all 1s ease;
+                                    transition: all 1s ease;
+                                    background-position: top center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                }
+                            }
+                            &:hover .img-container > div {
+                                transform: scale(1.1);
+                            }
+                        }
+                        a.category {
+                            p {
+                                font: 12px $klinicslab-bold;
+                                color: #b5b5b5;
+                                text-align: left;
+                                margin: 10px 0;
+                                text-transform: uppercase;
+                            }
+                        }
+                        a.article {
+                            h3 {
+                                text-align: left;
+                                font-size: 18px;
+                                font-family: $lato-bold;
+                                color: #fa9300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Standart Monitors
+@media only screen and (max-width: 1366.98px) {
+    section {
+        .video-background {
+            .video-container {
+                height: 450px;
+            }
+        }
+    }
+}
+
+//Tablet
+@media only screen and (max-width: 1024.98px) {
+    section {
+        .main {
+            .content {
+                .row {
+                    .rating {
+                        .stars {
+                            .star:hover:before, .star:hover ~ .star:before {
+                                content: none;
+                            }
+                        }
+                    }
+                    .helpful-links {
+                        .bottom {
+                            a {
+                                &:hover .img-container > div {
+                                    transform: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Mobile
+@media only screen and (max-width: 767.98px) {
+    section {
+        .video-background {
+            .video-container {
+                height: auto;
+                img {
+                    width: 100%;
+                }
+                video {
+                    width: auto;
+                    height: 101%;
+                    -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+                    left: 50%;
+                }
+            }
+        }
+        nav {
+            .content {
+                .title {
+                    bottom: 0;
+                }
+            }
+        }
+        .main {
+            background-size: auto;
+            .content {
+                margin-top: 0;
+                .row{
+                    .quote {
+                        margin: 30px 0;
+                        .box {
+                            padding: 16px 20px;
+                        }
+                    }
+                    .cta {
+                        font-size: 3.47vw;
+                        line-height: 8.68vw;
+                    }
+                    .share {
+                        text-align: center;
+                        #social-media {
+                            border-top: 1px solid #b7b7b7;
+                            padding-top: 20px;
+                            margin-top: 20px;
+                            #facebook, #twitter {
+                                display: inline-block;
+                                padding: 5px 5px;
+                                a {
+                                    div {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+                                }
+                            }
+                            #facebook {
+                                a {
+                                    #facebook-icon-container {                    
+                                        background-image: url('/assets/icons/facebook-grey-icon.svg');
+                                        background-size: cover;
+                                    }
+                                }
+                            }
+                            #twitter {
+                                a {
+                                    #twitter-icon-container {                    
+                                        background-image: url('/assets/icons/twitter-grey-icon.svg');
+                                        background-size: cover;
+                                    }
+                                }
+                            }              
+                        }
+                        p {                            
+                            font-size: 5.9vw;
+                            line-height: 6.9vw;
+                            border-bottom: 1px solid #b7b7b7;
+                            padding-bottom: 20px;
+                            margin-bottom: 40px;
+                        }
+                    }
+                    .rating {
+                        p {                            
+                            font-size: 5.9vw;
+                            line-height: 6.9vw;
+                        }
+                        .stars {
+                            img {
+                                width: 7.6vw;
+                            }
+                        }
+                        #rating-text {
+                            display: none;
+                            &.on {
+                                display: block;
+                            }
+                        }
+                    }
+                    .helpful-links {
+                        .bottom {
+                            .container {
+                                .row {
+                                    div:not(last-of-type) {
+                                        margin-bottom: 15px;
+                                    }
+                                }
+                            }
+                            a.category {
+                                p {
+                                    font-size: 14px;
+                                    margin-bottom: 0;
+                                }
+                            }
+                            a.article {
+                                h3 {
+                                    font-size: 20px;
+                                    line-height: 26px;
+                                    padding: 1% 0% 3% 0%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

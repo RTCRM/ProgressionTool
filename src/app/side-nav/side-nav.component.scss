@@ -1,0 +1,100 @@
+@import "src/assets/scss/variables.scss";
+
+nav {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0,-50%);
+    z-index: 1000;
+    .nav-item {
+        width: 100px;
+        // padding-left: 10px;
+        // margin: 10px 0 10px auto;
+        margin-left: auto;
+        // margin-bottom: 20px;
+        transition: width .5s ease;
+        a {
+            text-decoration: none;
+            div {
+                padding: 10px 0;
+                p {
+                    position: relative;
+                    padding-left: 10px;
+                    line-height: 30px;
+                    font-family: $lato-heavy;
+                    background-color: #0f737a;
+                    color: #fff;
+                    margin-bottom: 0;
+                    transition: background-color .5s ease;
+                    span {
+                        left: 0;
+                        padding-left: 30px;
+                        position: absolute;
+                        white-space: nowrap;
+                        font-size: 14px;
+                        font-family: $lato;
+                        opacity: 0;
+                        letter-spacing: -1px;
+                        transition: opacity .5s ease;
+                    }
+                }
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+        }
+        &.active {
+            width: 120px;
+            a {
+                div {
+                    p {
+                        background-color: #44a691 !important;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .nav-item {
+            width: 306px;
+            a {
+                div {
+                    p {
+                        background-color: #f5a623;
+                        span {
+                            opacity: 1;
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//IE 10+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
+    }
+}
+
+//Edge
+@supports (-ms-ime-align:auto) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
+    }
+}
+
+//Chrome 29+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    nav .nav-item a div p span {
+        letter-spacing: normal;
+    }
+}
+//Firefox
+@media all and (min--moz-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+    nav .nav-item a div p span {
+        letter-spacing: -.3px;
+    }
+}
