@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "progression-tool": {
+    "understanding-ild-progression": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/progression-tool",
+            "outputPath": "dist/understanding-ild-progression",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "progression-tool:build"
+            "browserTarget": "understanding-ild-progression:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "progression-tool:build:production"
+              "browserTarget": "understanding-ild-progression:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "progression-tool:build"
+            "browserTarget": "understanding-ild-progression:build"
           }
         },
         "test": {
@@ -114,7 +114,7 @@
         }
       }
     },
-    "progression-tool-e2e": {
+    "understanding-ild-progression-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -123,11 +123,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "progression-tool:serve"
+            "devServerTarget": "understanding-ild-progression:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "progression-tool:serve:production"
+              "devServerTarget": "understanding-ild-progression:serve:production"
             }
           }
         },
@@ -143,5 +143,5 @@
       }
     }
   },
-  "defaultProject": "progression-tool"
+  "defaultProject": "understanding-ild-progression"
 }

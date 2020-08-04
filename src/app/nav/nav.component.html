@@ -1,4 +1,4 @@
-<nav class="container-fluid main-nav">
+<!-- <nav class="container-fluid main-nav">
   <div class="row">
     <div id="logo">
       <div id="lungs-and-you">
@@ -24,7 +24,123 @@
       </div>
     </div>
   </div>
-</nav>
-<!-- <div id="debugger">
-  <p>Here!</p>
-</div> -->
+</nav> -->
+
+<header id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top align-items-center p-0 main-nav" [ngClass]="{'disappear': disappear, 'transparent': transparent, 'bg-solid': bgSolid}">
+	<div id="site-navbar" class="container-fluid" [ngClass]="{'bg-blue-light': isOpen}">
+		<a class="navbar-brand mr-lg-5 mr-xl-7" href="/">
+			<img src="./assets/main-site/logo-lungsand-you.svg" class="d-block" alt="Lungs&You" width="120">
+		</a>
+		<!-- <div id="title">
+			<h1><span class="d-none d-lg-block">Understanding IPF Progression</span></h1>
+		</div> -->
+		<div>
+			<div id="menu-toggler" class="menu-toggle navigation" (click)="toggle()" [ngClass]="{'open': isOpen}">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Overlay -->
+	<div id="navbar-overlay" class="navbar-overlay overlay-slide" [ngClass]="{'open': isOpen}">
+		<div class="row bg-blue-light">
+			<div class="col">
+				<div class="container-fluid container-lg py-4 pt-lg-5 bg-blue-light">
+					<div id="site-menu-container" class="row justify-content-center w-100">
+						<div class="col-12 col-lg">
+							<h6>UNDERSTAND</h6>
+							<div>
+								<ul class="list-unstyled">
+									<li><a href="/what-is-ild">What Is ILD?</a></li>
+									<li><a href="/symptoms-comparison-tool">Compare ILD to Diseases with Similiar Symptoms</a></li>
+									<li><a href="/what-is-ipf">What Is IPF?</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg">
+							<h6>DIAGNOSE</h6>
+							<div>
+								<ul class="list-unstyled">
+									<li><a href="/ild-diagnosis">About ILD Diagnosis</a></li>
+									<li><a href="/pulmonologist-search">Find a Pulmonologist</a></li>
+									<li><a href="/doctor-discussion">Personalized Doctor Discussion Guide</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg">
+							<h6>MANAGE</h6>
+							<div>
+								<ul class="list-unstyled">
+									<li><a href="/understanding-ild-progression">Understanding ILD Progression </a></li>
+									<li><a href="/ild-progression-management">How to Manage Chronic ILD with Worsening
+											Fibrosis</a></li>
+									<li><a href="/how-to-manage-ipf">How to Manage IPF</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg">
+							<h6>LIVING WITH ILD</h6>
+							<div>
+								<ul class="list-unstyled">
+									<li><a href="#">Explore Articles</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 col-lg">
+							<h6>SPREAD THE WORD</h6>
+							<div>
+								<ul class="list-unstyled">
+									<li><a href="/breathless-ipf">Breathless IPF and Bernie Williams</a></li>
+									<li><a href="/queen-latifah">Queen Latifah Raises Awareness</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="my-4">
+			<div class="container bg-color-white">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-11">
+						<div class="row">
+							<div class="col-12 col-md-7">
+								<div>
+									<p class="font-weight-bold pt-3 pt-lg-0 font-lora">We know how lost you might feel while searching for answers about your health or ILD, but we’re here to support you. </p>
+									<p class="pt-2 pt-lg-0 font-lora">
+										Sign up to have information about interstitial lung disease (ILD), including
+										real
+										stories
+										and encouragement from people living with the disease, sent right to your
+										inbox.
+									</p>
+								</div>
+							</div>
+
+							<div class="col-10 offset-1 col-md-5 offset-md-0 mt-2 mt-md-0">
+								<a href="/signup" class="cta cta-positive gtm-signup">
+									<div class="cta-container">
+										<div class="cta-icon">
+											<img src="./assets/main-site/desktop-icon-standard-button-positive-sign-up.svg"
+												 alt="">
+										</div>
+										<div class="cta-text-carat">
+											<div class="cta-text">
+												Sign up for support
+											</div>
+											<div class="cta-carat up"></div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Overlay -->
+</header>

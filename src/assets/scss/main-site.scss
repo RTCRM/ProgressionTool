@@ -1,0 +1,361 @@
+// CTA Buttons
+.cta {
+	display: flex;
+	width: 100%;
+	padding: 7px 20px 19px 27px;
+	transition: box-shadow .3s ease;
+	background-color: $alice-blue;
+	border-left: 3px solid $anakiwa;
+
+	@media (min-width: 1024px) {
+		padding: 26px 21px 26px 0;
+	}
+
+	.cta-container {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+		flex-direction: column;
+
+		@media (min-width: 1024px) {
+			flex-direction: row;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		.cta-icon {
+			width: 85px;
+			text-align: center;
+			display: flex;
+			-ms-flex-pack: center;
+			justify-content: center;
+
+			@media (min-width: 1024px) {
+				margin: 0 10px;
+			}
+
+			& > img {
+				max-width: 100%;
+				margin-right: 25px;
+
+				@media (min-width: 1024px) {
+					margin: 0;
+				}
+			}
+		}
+
+		.cta-text-carat {
+			display: flex;
+			flex: 1 1 auto;
+			align-items: center;
+			width: 100%;
+
+			.cta-text {
+				flex: 1;
+				flex-grow: 1;
+				font-family: 'Lora', serif;
+				font-weight: 900;
+				font-size: 1.25rem;
+				line-height: 1.25;
+				color: $mosque;
+
+				@media (min-width: 1024px) {
+					font-size: 1.5rem;
+				}
+			}
+
+			.cta-carat {
+				width: 32px;
+				height: 32px;
+				background-image: url("/assets/main-site/button-circle-carat.svg");
+				background-size: cover;
+				margin-left: 18px;
+
+				&.up {
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+
+	&.cta-negative {
+		background-color: $dark-cyan;
+		border-left: 3px solid white;
+
+		.cta-text {
+			color: white !important;
+		}
+	}
+
+	&:hover {
+		box-shadow: 4px 6px 12px 0 rgba(0, 0, 0, 0.1);
+	}
+}
+
+.bg-blue-light {
+	background-color: $alice-blue;
+}
+
+.font-lora {
+	font-family: 'Lora', serif;
+}
+
+body p {
+	@media (min-width: 768px) {
+    margin-bottom: 2rem;
+	}
+}
+
+.list-unstyled {
+	padding-left: 0;
+	list-style: none;
+	margin-left: 0;
+	li:before {
+		content: '';
+	}
+}
+
+.rotate-90 {
+	transform: rotate(90deg);
+}
+
+.inner-container {
+	padding-left: calc(8.3333333333% - 30px);
+	padding-right: calc(8.3333333333% - 30px);
+
+	@media(min-width: 1024px) {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	@media(min-width: 1200px) {
+		padding-left: 65px;
+		padding-right: 65px;
+	}
+}
+.form-control {
+	border-radius: 0;
+	border-color: $anakiwa;
+	border-width: 2px;
+
+	&:focus {
+		border-color: $anakiwa;
+		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+	}
+}
+.btn-info-choice.active {
+	background-color: $pattens-blue;
+}
+.btn-info-choice:not(.dropdown-toggle) {
+	font-weight: 800;
+	text-align: center;
+	padding: 0.5rem 1.5rem;
+}
+.btn-info-choice {
+	background-color: white;
+	border: solid 2px $anakiwa;
+	padding: 0.5rem 40px .5rem 1.25rem;
+	line-height: 1.5;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-radius: 0;
+}
+.btn-info-choice {
+	background-color: white;
+	border: solid 2px $anakiwa;
+	padding: 0.5rem 40px .5rem 1.25rem;
+	line-height: 1.5;
+	//font-size: 18px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-radius: 0;
+
+	&:not(.dropdown-toggle){
+		font-weight: 800;
+		text-align: center;
+		padding: 0.5rem 1.5rem;
+	}
+
+	&.btn-block {
+		padding: 0.4rem 1.25rem;
+	}
+
+	@media (max-width: 1200px) {
+		padding: 0.45rem 1rem;
+		&:not(.btn-block) {
+			padding: 0.5rem 1rem;
+		}
+	}
+	@media (max-width: 992px) {
+		padding: 0.45rem 1rem;
+		&:not(.btn-block) {
+			padding: 0.6rem 1rem;
+		}
+	}
+	@media (max-width: 767.98px) {
+		&.btn-block {
+			padding: 0.6rem 1rem;
+		}
+	}
+
+	&:after {
+		text-align: right;
+		float: right;
+		position: absolute;
+		right: 15px;
+		/*Firefox fix*/
+		margin-top: 12px;
+	}
+
+	&.active {
+		background-color: $pattens-blue;
+	}
+}
+.custom-checkbox {
+	padding-left: 2.8125rem;
+	margin-bottom: 1.875rem;
+
+	.custom-control-text {
+		display: none;
+		width: max-content;
+		margin-left: 20px;
+		margin-top: -4px;
+		border-color: $anakiwa !important;
+		border-radius: 0;
+		border-width: 2px;
+	}
+
+	.custom-control-input {
+		width: 1.5625rem;
+		height: 1.5625rem;
+		top: 3px;
+
+		& ~ .custom-control-label {
+			line-height: 1.5625;
+
+			&::before, &::after {
+				width: 1.5625rem;
+				height: 1.5625rem;
+				left: -2.8125rem;
+				top: 3px;
+			}
+
+			&::before {
+				border-color: $anakiwa;
+				border-radius: 0;
+				border-width: 2px;
+			}
+
+			&::after {
+				background-size: cover;
+				opacity: 0.5;
+			}
+		}
+
+		&:checked ~ .custom-control-label {
+			font-weight: bold;
+			color: $teal;
+
+			&::after {
+				background-image: url("/assets/main-site/checkbox-active.svg");
+				opacity: 1;
+			}
+
+			&::before {
+				background-color: white;
+			}
+		}
+
+		&:checked ~ .custom-control-text {
+			display: inline-block;
+		}
+
+		&:focus:not(:checked) ~ .custom-control-label::before {
+			border-color: $anakiwa;
+		}
+
+		&:focus ~ .custom-control-label::before {
+			box-shadow: 0 0 0 0.2rem rgba($dark-cyan, 0.15);
+			border-color: $anakiwa;
+		}
+
+		&:not(:disabled):active ~ .custom-control-label::before {
+			background-color: white;
+		}
+
+		&:disabled ~ .custom-control-label::before {
+			border-color: $very-light-grey;
+			background-color: $white-smoke;
+		}
+	}
+}
+.custom-radio {
+	padding-left: 2.8125rem;
+	margin-bottom: 1.875rem;
+
+	.custom-control-input {
+		width: 1.5625rem;
+		height: 1.5625rem;
+		top: 3px;
+
+		& ~ .custom-control-label {
+			line-height: 1.5625;
+
+			&::before, &::after {
+				width: 1.5625rem;
+				height: 1.5625rem;
+				left: -2.8125rem;
+				top: 3px;
+				border-width: 2px;
+			}
+		}
+
+		&:checked ~ .custom-control-label {
+			font-weight: bold;
+			color: $teal;
+
+			&::before {
+				background-color: white;
+				border-color: $anakiwa;
+				color: white;
+			}
+
+			&::after {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='-12.5 -12.5 27 27'%3e%3ccircle r='12.5' fill='%23007b7f'/%3e%3c/svg%3e");
+			}
+		}
+
+		&:focus ~ .custom-control-label::before {
+			box-shadow: 0 0 0 0.2rem rgba($dark-cyan, 0.15);
+			border-color: $anakiwa;
+		}
+	}
+
+	.custom-control-label {
+		&::before {
+			border-color: $anakiwa !important;
+			// border-radius: 0;
+			background-color: white !important;
+		}
+	}
+}
+.bold {
+	font-weight: 800;
+}
+.signup p.signup-agreement {
+	font-family: Lato;
+	font-size: 16.4px;
+	font-weight: 800;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.5;
+	letter-spacing: -0.01px;
+	color: $eclipse;
+}
+//Fonts
+@media (min-width: 1200px) {
+	.fs-lg-40 {
+			font-size: 2.5rem;
+	}
+}

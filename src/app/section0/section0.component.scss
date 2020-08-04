@@ -8,17 +8,15 @@ section {
                 .label {
                     width: 0;
                     height: 0;
-                    // background-color: initial;
                 }
                 .text {
                     .scroll {
                         position: absolute;
-                        right: 100px;
+                        right: 120px;
                         bottom: 50px;
                         margin-bottom: 0;
                         font: 15px/18px $lato;
-                        color: #4d4d4d;
-
+                        color: $grey;
                     }
                 }
             }
@@ -27,9 +25,12 @@ section {
 }
 
 //Desktop
-@media (min-width: 1025px) { 
-    section nav .content .title .text h1 {
-        background: url('/assets/elements/down-arrows.png') top right no-repeat;
+@media (min-width: 1024px) { 
+    section nav .content {
+        height: 658px;
+        .title .text h1 {
+            background: url('/assets/elements/down-arrows.png') top right no-repeat;
+        }
     }
 }
 
@@ -54,10 +55,6 @@ section {
                         }
                     }
                 }
-            }
-        }
-        .main {
-            .content {
             }
         }
     }

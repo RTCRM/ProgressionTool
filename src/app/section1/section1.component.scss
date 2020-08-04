@@ -9,9 +9,6 @@ section {
             height: auto;
             .title {
                 position: initial;
-                .label {
-                    margin-left: 50px;
-                }
             }
         }
     }
@@ -30,18 +27,18 @@ section {
         .content {
             .callout {
                 h3 {
-                    width: 71.65%;            
+                    // width: 71.65%;            
                 }
                 a {
-                    width: 28.35%;
-                    margin: 28px 0;
+                    // width: 28.35%;
+                    // margin: 28px 0;
                 }
             }
         }
     }
 }
 
-@media only screen and (max-width: 1024.98px) {
+@media only screen and (max-width: 1023.98px) {
     section {
         nav {
             .content {
@@ -53,7 +50,7 @@ section {
             }
         }
         footer {
-            margin-top: 55px;
+            // margin-top: 55px;
         }
     }
 }
@@ -77,22 +74,22 @@ section {
             margin-top: 35px;
             .content {
                 .callout {
-                    padding-right: 15px;
-                    padding-left: 15px;
-                    text-align: center;
-                    h3 {
-                        width: 90%;
-                        margin-top: 20px;
-                        font-size: $mobile-font-size;
-                        line-height: $mobile-line-height;
-                    }
-                    a {
-                        width: auto;
-                        padding: 0 20px;
-                        margin: 20px 0;
-                        font-size: 3.47vw;
-                        line-height: 8.68vw;
-                    }
+                    // padding-right: 15px;
+                    // padding-left: 15px;
+                    // text-align: center;
+                    // h3 {
+                    //     width: 90%;
+                    //     margin-top: 20px;
+                    //     font-size: $mobile-font-size;
+                    //     line-height: $mobile-line-height;
+                    // }
+                    // a {
+                    //     width: auto;
+                    //     padding: 0 20px;
+                    //     margin: 20px 0;
+                    //     font-size: 3.47vw;
+                    //     line-height: 8.68vw;
+                    // }
                 }
             }
         }

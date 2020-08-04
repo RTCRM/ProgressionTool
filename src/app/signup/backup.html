@@ -1,0 +1,440 @@
+<aside>
+	<section id="signup-modal" class="hierarchical-child signup" data-location="in-page">
+		<div class="bg-blue-light" id="signup-title-container">
+			<div class="container-fluid container-lg">
+				<div class="row justify-content-center align-items-center">
+					<div class="col-12 col-lg-10">
+						<div class="inner-container">
+							<div class="d-flex py-3">
+								<div class="font-lora fs-34 fs-lg-40">Sign Up for ILD Support</div>
+								<div class="ml-auto hc-close d-flex align-items-center"
+									 ng-click="app.closeHierarchicalTransition($event)">
+									<img src="/assets/main-site/button-circle-carat.svg" width="32"
+										 class="rotate-90"
+										 alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="signup-progressbar-container" id="signup-progressbar-container">
+			<div class="container-fluid container-lg">
+				<div class="inner-container">
+					<div class="row no-gutters bg-grey-two text-white">
+						<div class="col-4 text-right pr-3">
+							PROGRESS
+						</div>
+						<div class="col-4">
+							<div class="signup-progressbar">
+								<div class="white-line"></div>
+								<div class="yellow-line"
+									 ng-class="{'step2': validationProgress == 2, 'step3': validationProgress == 3}"></div>
+								<div class="dots">
+									<span class="progressbar-dot active"></span>
+									<span class="progressbar-dot" ng-class="{'active': validationProgress >= 2}"></span>
+									<span class="progressbar-dot" ng-class="{'active': validationProgress == 3}"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid container-lg pt-5" id="signupform-container">
+			<div class="row justify-content-center align-items-center">
+				<div class="col-12 col-lg-10 mb-5">
+					<div class="inner-container">
+						<form novalidate id="register" name="register" [formGroup]="register">
+							<div id="section-signup-1">
+								<div class="row">
+									<div class="col-12 text-left mt-1 mb-1">
+										<p>Please answer the questions below so that we can ensure you receive support
+											for your specific needs. By filling out this form, you acknowledge you are
+											over
+											18 years old.</p>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col col-md-6 pr-md-2">
+										<label for="firstName" class="font-weight-bold">First Name</label>
+										<div>
+											<input type="text" inputmode="text" class="form-control"
+													[(ngModel)]="reg.firstName"
+												   pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" maxlength="50"
+												   name="firstName" id="firstName"
+												   [ngClass]="{'is-invalid': invalidFirstName || (register.firstName.$invalid && register.firstName.$touched && !focusFirstName && !register.firstName.$error.required)}"
+												   ng-focus="focusFirstName=true;"
+												   ng-change="invalidFirstName=false"
+												   ng-blur="focusFirstName=false"
+												   required autocomplete="off">
+											<div class="invalid-feedback">
+												Please enter your first name.
+											</div>
+										</div>
+									</div>
+									<div class="form-group col-md-6 pl-md-2">
+										<label for="lastName" class="font-weight-bold">Last Name</label>
+										<div>
+											<input type="text" inputmode="text" class="form-control"
+													[(ngModel)]="reg.lastName"
+												   pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" maxlength="50"
+												   name="lastName" id="lastName"
+												   ng-class="{'is-invalid': invalidLastName || (register.lastName.$invalid && register.lastName.$touched && !focusLastName && !register.lastName.$error.required)}"
+												   ng-focus="focusLastName=true;"
+												   ng-change="invalidLastName=false"
+												   ng-blur="focusLastName=false"
+												   required autocomplete="on">
+											<div class="invalid-feedback">
+												Please enter your last name.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col col-md-6 pr-md-2 mb-5">
+										<label for="email" class="font-weight-bold">Email</label>
+										<div class="email-for-validation">
+											<input type="email" inputmode="email" class="form-control"
+													[(ngModel)]="reg.email"
+												   pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$" maxlength="100"
+												   name="email" id="email"
+												   ng-class="{'is-invalid': invalidEmail || (register.email.$invalid && register.email.$touched && !focusEmail && !register.email.$error.required), 'is-valid': register.email.$valid && register.email.$dirty}"
+												   ng-focus="focusEmail=true"
+												   ng-change="invalidEmail=false"
+												   ng-blur="focusEmail=false"
+												   required autocomplete="off">
+											<div class="invalid-feedback">
+												Please enter a valid email address.
+											</div>
+											<i class="is-valid-icon"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="section-signup-2"
+								 ng-class="{'d-none': validationProgress < 2, 'fadeInBottom': validationProgress >= 2}">
+								<div class="form-row">
+									<div class="col-12 col-md-6 mb-5">
+										<p class="mb-2"><b>Who are you finding information for?</b></p>
+										<div id="information-choice" class="btn-group btn-group-toggle"
+											 data-toggle="buttons">
+											<label class="btn btn-info-choice active fs-18 fs-lg-20 gtm-audience gtm-selection gtm-myself">
+												<input type="radio" name="options" [(ngModel)]="reg.selected" value="myself" checked>
+												Myself
+											</label>
+											<label class="btn btn-info-choice fs-18 fs-lg-20 gtm-audience gtm-selection gtm-loved-one">
+												<input type="radio" name="options" [(ngModel)]="reg.selected" value="alovedone">
+												A Loved One
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-12">
+										<p class="font-weight-bolder mb-2">Which of the following best describes
+                      you?</p>
+										<div class="pt-1">
+											<!-- Myself START-->
+											<ng-template [ngIf]="reg.selected === 'myself'">
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option1a" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="1">
+													<label class="custom-control-label" for="radio1option1a">
+														I have been diagnosed with ILD or IPF, which is a common type of
+														ILD.
+													</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option2a" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="2">
+													<label class="custom-control-label" for="radio1option2a">I have
+														symptoms
+														of ILD, like a cough, shortness of breath, or fatigue.</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option3a" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="3">
+													<label class="custom-control-label" for="radio1option3a">I have been
+														diagnosed with another disease, and I am wondering if it could
+														cause
+														ILD. (I&nbsp;may or may not have symptoms of ILD.)</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option4a" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="4">
+													<label class="custom-control-label"
+														   for="radio1option4a">Other</label>
+												</div>
+											</ng-template>
+											<!-- Myself END-->
+											<!-- A Loved One START-->
+											<ng-template [ngIf]="reg.selected === 'alovedone'">
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option1b" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="1">
+													<label class="custom-control-label" for="radio1option1b">My loved
+														one
+														has been diagnosed with ILD or IPF, which is a common type of
+														ILD.</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option2b" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="2">
+													<label class="custom-control-label" for="radio1option2b">My loved
+														one is
+														showing symptoms of ILD, like a cough, shortness of breath, or
+														fatigue.</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio1option3b" [(ngModel)]="reg.radio1"
+														   name="radio1" class="custom-control-input" value="3">
+													<label class="custom-control-label" for="radio1option3b">My loved
+														one
+														has been diagnosed with another disease, and I’m wondering if it
+														could cause ILD. (My loved one may or may not have symptoms of ILD.)</label>
+												</div>
+											</ng-template>
+											<!-- A Loved One END-->
+										</div>
+									</div>
+								</div>
+								<div class="form-row d-none  mt-5 mt-md-3"
+									 [ngClass]="{'d-none': reg.radio1 == 2 || reg.radio1 == 4,'fadeInBottom': reg.radio1 == 1 || reg.radio1 == 3}">
+									<div class="form-group col-12">
+										<!-- I have been diagnosed with ILD or IPF... START -->
+										<ng-template [ngIf]="reg.radio1 == 1">
+											<p class="font-weight-bolder mb-2">Which type of ILD <span
+														ng-show="reg.selected === 'myself'">have you</span><span
+														ng-show="reg.selected === 'alovedone'">has your loved one</span>
+												been diagnosed with?</p>
+											<div class="pt-1">
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option1" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="1"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option1">Hypersensitivity
+														pneumonitis (HP)</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option2" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="2"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option2">Idiopathic
+														non-specific interstitial pneumonia (iNSIP)</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option3" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="3"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option3">Mixed
+														connective
+														tissue disease (MCTD)-associated ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option4" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="4"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option4">Myositis-related
+														ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option5" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="5"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option5">Rheumatoid
+														arthritis (RA)-ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option6" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="6"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option6">Sarcoidosis-associated
+														ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option7" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="7"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option7">Scleroderma-associated
+														ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option8" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="8"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option8">Sjogren’s
+														syndrome-associated ILD</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option9" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="9"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option9">IPF</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option10" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="10"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option10">Some other
+														type
+														of ILD</label>
+												</div>
+											</div>
+										</ng-template>
+										<!-- I have been diagnosed with ILD or IPF... END -->
+										<!-- I have been diagnosed with another disease... START -->
+										<ng-template [ngIf]="reg.radio1 == 3">
+											<p class="font-weight-bolder mb-2"><span
+												*ngIf="reg.selected === 'myself'">I’ve</span><span
+												*ngIf="reg.selected === 'alovedone'">My loved one has</span>
+												been diagnosed with:</p>
+											<div class="pt-1">
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option1" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="1"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option1">Mixed
+														connective
+														tissue disease (MCTD)</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option2" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="2"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label"
+														   for="radio2option2">Myositis</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option3" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="3"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option3">Rheumatoid
+														arthritis (RA)</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option4" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="4"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label"
+														   for="radio2option4">Sarcoidosis</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option5" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="5"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label"
+														   for="radio2option5">Scleroderma</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option6" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="6"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label" for="radio2option6">Sjogren's
+														syndrome</label>
+												</div>
+												<div class="custom-control custom-radio mb-2">
+													<input type="radio" id="radio2option7" [(ngModel)]="reg.radio2"
+														   name="radio2" class="custom-control-input" value="7"
+														   ng-change="$parent.validationProgress=3">
+													<label class="custom-control-label"
+														   for="radio2option7">Other</label>
+												</div>
+											</div>
+										</ng-template>
+										<!-- I have been diagnosed with another disease... END -->
+									</div>
+								</div>
+							</div>
+							<div id="section-signup-3" class="mt-5"
+								 ng-class="{'d-none': validationProgress < 3,'fadeInBottom': validationProgress == 3}">
+								<div class="row">
+									<div class="col-12">
+										<p class="bold mb-0">Would you like to be notified about ILD-related events?
+											(Optional)</p>
+										<p class="mb-0 pb-0">
+											Sometimes Lungs&You<sup>&reg;</sup> hosts educational ILD events in
+											different cities around the country and even virtual events that you can
+											join from the comfort of your own home. If you’d like to be notified about
+											these events, enter your zip code and/or phone number below. You must enter
+											at least one to be notified.</p>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-12 col-md-6 mt-3">
+										<label for="phone" class="font-weight-bold">Phone number</label>
+										<div>
+											<input type="text" inputmode="numeric" class="form-control"
+												   [(ngModel)]="reg.phone"
+												   pattern="\d{3}\d{3}\d{4}$" maxlength="10" name="phone" id="phone"
+												   placeholder="555-555-5555"
+												   ng-class="{'is-invalid': invalidPhone || (register.phone.$invalid && register.phone.$touched && !focusPhone && !register.phone.$error.required)}"
+												   ng-focus="focusPhone=true;"
+												   ng-change="invalidPhone=false"
+												   ng-blur="focusPhone=false; signup.checkOptionalValue();"
+												   ng-trim="false"
+												   autocomplete="off">
+											<div class="invalid-feedback">
+												Please enter a valid phone number.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-12 col-md-6 mt-3">
+										<label for="zipcode" class="font-weight-bold">Zip code</label>
+										<div>
+											<input type="text" inputmode="numeric" class="form-control"
+												   [(ngModel)]="reg.zipcode"
+												   pattern="^\d{5}$" maxlength="5" name="zipcode" id="zipcode"
+												   placeholder="Enter ZIP code"
+												   ng-class="{'is-invalid': invalidZipcode || (register.zipcode.$invalid && register.zipcode.$touched && !focusZipcode && !register.zipcode.$error.required)}"
+												   ng-focus="focusZipcode=true;"
+												   ng-change="invalidZipcode=false"
+												   ng-blur="focusZipcode=false;  signup.checkOptionalValue();"
+												   ng-trim="false"
+												   autocomplete="off">
+											<div class="invalid-feedback">
+												Please enter a valid ZIP code.
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-12 mt-3">
+										<div class="custom-control custom-checkbox">
+											<input name="check" type="checkbox" [(ngModel)]="reg.check" class="custom-control-input"
+												   id="signup-participation">
+											<label class="custom-control-label ng-binding" for="signup-participation">I
+												would like to receive communications about participation in market
+												research
+												(i.e., potential surveys, interviews, etc.).</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="mt-2">
+										<p class="signup-agreement">By selecting “Sign Up,” I agree to allow Boehringer
+											Ingelheim Pharmaceuticals, Inc. and companies working on its behalf to use
+											this
+											information to contact me about health- and product-related information and
+											services associated with interstitial lung disease and other products. </p>
+									</div>
+								</div>
+								<div class="form-row justify-content-lg-end">
+									<div class="mt-3">
+										<span class="btn-form btn-orange-outline mr-2"
+											  ng-click="app.closeHierarchicalTransition($event)" id="email-cancel">Cancel
+										</span>
+										<a class="btn-form btn-orange" href ng-click="signup.submit($event)">SIGN UP</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</aside>

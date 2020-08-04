@@ -14,8 +14,8 @@ export class WindowService {
   windowSize(width: number, height: number) {
     console.log('width:', width, 'height:', height);
     this.animation.resize(width, height);
-    this.tooltip.resize();
     this.scroll.resize(width);
+    this.tooltip.resize();
   }
 
 }

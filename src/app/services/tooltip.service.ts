@@ -28,7 +28,7 @@ export class TooltipService {
 
   positioning($element: any, $hint: any) {
     $hint.css('top', $element.position().top + 40);
-    $hint.children('.arrow').css('left', $element.position().left + $element.width() - 26);
+    $hint.children('.arrow').css('left', $element.position().left - $hint.position().left + $element.width() - 26);
   }
 
   resize() {

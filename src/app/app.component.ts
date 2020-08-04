@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, SimpleChange } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from './services/scroll.service';
 import { WindowService } from './services/window.service';
 import { AnimationService } from './services/animation.service';
@@ -11,14 +11,14 @@ import { MetaService } from './services/meta.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'progression-tool';
+  title = 'understanding-ild-progression';
 
   // tslint:disable-next-line:max-line-length
   constructor(private scroll: ScrollService, private window: WindowService, private animation: AnimationService, private meta: MetaService) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: Event) {
-    const scrollOffset = $(window).scrollTop();
+    const scrollOffset = window.pageYOffset;
     this.scroll.scrollProgress(scrollOffset);
   }
 
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.meta.addMeta();
+    this.scroll.initialPos(window.pageYOffset);
     this.window.windowSize(window.innerWidth, window.innerHeight);
   }
 }

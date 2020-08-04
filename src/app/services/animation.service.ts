@@ -23,7 +23,7 @@ export class AnimationService {
     // tslint:disable-next-line:only-arrow-functions
     $('.responsive').each(function() {
       // tslint:disable-next-line:max-line-length
-      const src = width < ($(this).hasClass('tablet') ? 1025 : 768) ? $(this).attr('data-src').replace('.', '-m.') : $(this).attr('data-src');
+      const src = width < ($(this).hasClass('tablet') ? 1024 : 768) ? $(this).attr('data-src').replace('.', '-m.') : $(this).attr('data-src');
       const attr = $(this).hasClass('data-src') ? 'data-src' : 'src';
       $(this).attr(attr, src);
     });

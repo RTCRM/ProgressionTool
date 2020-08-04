@@ -1,15 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AnalyticsService } from './analytics.service';
+import { EventEmitter } from '@angular/core';
 // import * as global from './global';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScrollService {
-
+  transparent = new EventEmitter<Boolean>();
+  bgSolid = new EventEmitter<Boolean>();
+  disappear = new EventEmitter<Boolean>();
   width: number;
   navHeight: number;
   locked = false;
+  navCounter: number = 0;
+  iniPos: number;
+  prevPos: number;
   animationArray = [{
     id: 0,
     start: 0,
@@ -26,8 +32,16 @@ export class ScrollService {
 
   constructor(private analytics: AnalyticsService) { }
 
+  initialPos(pos: number) {
+    this.iniPos = pos;
+    this.prevPos = pos;
+  }
+
   scrollProgress(pos: number) {
     // console.log('pos:', pos);
+    
+    if (this.navCounter == 3) this.nav(pos);
+    else this.navCounter++;
     // Menu Items
     this.menu(pos);
     this.active($('app-section0 nav .title'), $('app-nav nav'), pos);
@@ -43,7 +57,7 @@ export class ScrollService {
     // Section 2-1
     this.position($('#container-2-1'), $('#animation-2-1'), 0, pos);
     this.zoom($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0.86, 1, pos);
-    if (this.width > 1024) {
+    if (this.width >= 1024) {
       this.moveY($('#placeholder-1'), $('#animation-2-1 #slide-1'), 0, -100, pos);
     } else {
       $('#animation-2-1 #slide-1').css('top', '');
@@ -273,7 +287,7 @@ export class ScrollService {
   lock() {
     this.locked = true;
   }
-
+  
   unlock() {
     this.locked = false;
   }
@@ -315,8 +329,21 @@ export class ScrollService {
     }
   }
 
+  nav(pos: number) {
+    // console.log(pos);
+    if (this.prevPos < pos && pos > 65) {
+      this.disappear.emit(true);
+    } else {
+      this.disappear.emit(false);
+    }
+		this.transparent.emit(pos <= 65 ? true : false);
+    this.bgSolid.emit(pos > 296 ? true : false);
+		this.prevPos = pos;
+  }
+
   resize(width: number) {
     this.width = width;
     this.navHeight = width < 768 ? 47 : 70;
   }
 }
+

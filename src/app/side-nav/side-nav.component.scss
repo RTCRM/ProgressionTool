@@ -22,8 +22,8 @@ nav {
                     padding-left: 10px;
                     line-height: 30px;
                     font-family: $lato-heavy;
-                    background-color: #0f737a;
-                    color: #fff;
+                    background-color: $mosque;
+                    color: white;
                     margin-bottom: 0;
                     transition: background-color .5s ease;
                     span {
@@ -48,7 +48,7 @@ nav {
             a {
                 div {
                     p {
-                        background-color: #44a691 !important;
+                        background-color: $persian-green !important;
                     }
                 }
             }
@@ -60,7 +60,7 @@ nav {
             a {
                 div {
                     p {
-                        background-color: #f5a623;
+                        background-color: $mango-tango;
                         span {
                             opacity: 1;
                             width: 50px;

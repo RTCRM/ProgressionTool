@@ -6,7 +6,7 @@
       </div>
       <div class="container content">
         <div class="row justify-content-center">
-          <div class="title col-lg-10">
+          <div class="title col">
             <div class="id">
               <div class="label">
                 <p>4</p>
@@ -24,33 +24,34 @@
     <div class="row overflow-hidden">
       <div class="container content">
         <div class="row justify-content-center">
-          <div class="text copy col-lg-9">
-            <p>As IPF scarring and honeycombs continue to form, you will begin to feel their effects on your body,
-              including symptoms like:</p>
-            <br />
-            <ul>
-              <li>
-                <p>shortness of breath</p>
-              </li>
-              <li>
-                <p>a dry, hacking cough</p>
-              </li>
-              <li>
-                <p>rapid, shallow breathing</p>
-              </li>
-              <li>
-                <p>fatigue</p>
-              </li>
-              <li>
-                <p>gradual weight loss</p>
-              </li>
-              <li>
-                <p>aching muscles and joints</p>
-              </li>
-              <li>
-                <p>widening and rounding of the fingertips or toes</p>
-              </li>
-            </ul>
+          <div class="col">
+            <div class="text copy">
+              <p>As scarring and honeycombs continue to form, you will begin to feel their effects on your body, including persistent symptoms like:</p>
+              <br />
+              <ul>
+                <li>
+                  <p>shortness of breath</p>
+                </li>
+                <li>
+                  <p>a dry, hacking cough</p>
+                </li>
+                <li>
+                  <p>rapid, shallow breathing</p>
+                </li>
+                <li>
+                  <p>fatigue</p>
+                </li>
+                <li>
+                  <p>gradual weight loss</p>
+                </li>
+                <li>
+                  <p>aching muscles and joints</p>
+                </li>
+                <li>
+                  <p>widening and rounding of the fingertips or toes</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="row position-relative justify-content-center squares">
@@ -83,28 +84,28 @@
                 bringing them in the house left me huffing and puffing. I needed to rest before I could put my
                 groceries away. Any type of exercise that required a little more effort caused me to lose my breath.”</p>
               <br />
-              <p>&mdash; Gene, <span class="small">PERSON LIVING WITH</span><span> IPF</span></p>
+              <p>&mdash; Gene<span class="small">, PERSON LIVING WITH</span><span> IPF</span><span class="small">, A COMMON TYPE OF</span><span> ILD</span></p>
             </div>
           </div>
         </div>
         <div class="row position-relative justify-content-center">
-          <div class="text copy col-lg-9">
-            <p>Pulmonologists will track IPF’s effect on the body with certain <a tabindex="-1" [routerLink]="" hint-data="hint-2"
-              (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like HRCT
-              scans, forced vital capacity (FVC), and walking tests.</p>
-            <br />
-            <p>While these tests can help provide a clearer picture of how IPF is progressing, remember that one single
-              test may not tell the whole story. <strong>Even if one test result remains the same, IPF may still be
-                progressing.</strong></p>
-            <br />
-            <p>Additionally, it’s important to understand that test results aren’t just numbers on a chart—they may
-              help explain why you’re feeling a certain way. </p>
-            <br />
-            <p>For example, <a tabindex="-1" [routerLink]="" hint-data="hint-3" (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">FVC <img src="assets/icons/plus.png"
-                  alt=""></a> is related to your ability to be physically active. One study found that a 1% loss in FVC
-              equates to <strong>60 fewer steps</strong> per day. In other words, test results could help explain or
-              predict the impact of IPF on your daily life.
-            </p>
+          <div class="col-12">
+            <div class="text copy">
+              <p>Pulmonologists will track the effect of chronic ILD with worsening fibrosis on the body with certain <a tabindex="-1" [routerLink]="" hint-data="hint-2"
+                (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">tests <img src="assets/icons/button-tooltip-inline.svg" alt=""></a>, like HRCT
+                scans, forced vital capacity (FVC), and walking tests.</p>
+              <br />
+              <p>While these tests can help provide a clearer picture of how chronic ILD with progressive fibrosis may be worsening, remember that one single test may not tell the whole story. <strong>Even if one test result remains the same,</strong> chronic ILD with progressive fibrosis <strong>may still be worsening.</strong></p>
+              <br />
+              <p>Additionally, it’s important to understand that test results aren’t just numbers on a chart—they may
+                help explain why you’re feeling a certain way. </p>
+              <br />
+              <p>For example, <a tabindex="-1" [routerLink]="" hint-data="hint-3" (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">FVC <img src="assets/icons/button-tooltip-inline.svg"
+                    alt=""></a> is related to your ability to be physically active. One study in people with IPF, a common type of ILD, found that a 1% loss in FVC
+                equates to <strong>60 fewer steps</strong> per day. In other words, test results could help explain or
+                predict the impact of chronic ILD with worsening fibrosis on your daily life.
+              </p>
+            </div>
           </div>
           <div class="ladder col-md-8 col-lg-6">
             <img src="assets/elements/ladder-base.png" alt="">
@@ -126,9 +127,9 @@
           <div class="hint col-lg-9" id="hint-2">
             <div class="arrow"></div>
             <div class="box">
-              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"><img src="assets/icons/button-tooltip-close.svg" alt=""></a>
               <h4>HELPFUL HINT</h4>
-              <p><strong class="orange">Tests</strong> used to detect IPF progression include:</p>
+              <p><strong class="mango-tango">Tests</strong> used to detect the progression of chronic ILD with worsening fibrosis include:</p>
               <ul>
                 <li>HRCT scans</li>
                 <li>Pulse oximetry (measured at rest and with exertion)</li>
@@ -144,9 +145,9 @@
           <div class="hint col-lg-9" id="hint-3">
             <div class="arrow"></div>
             <div class="box">
-              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"><img src="assets/icons/button-tooltip-close.svg" alt=""></a>
               <h4>HELPFUL HINT</h4>
-              <p><strong class="orange">Forced vital capacity (FVC)</strong> is a measure of the amount of air you exhale after you
+              <p><strong class="mango-tango">Forced vital capacity (FVC)</strong> is a measure of the amount of air you exhale after you
                 take a deep breath and blow out as hard as possible.</p>
             </div>
           </div>

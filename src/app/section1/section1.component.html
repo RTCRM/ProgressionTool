@@ -3,14 +3,14 @@
     <div class="row">
       <div class="container content">
         <div class="row justify-content-center">
-          <div class="title col-lg-10">
+          <div class="title col-12">
             <div class="id">
               <div class="label">
                 <p>1</p>
               </div>
             </div>
             <div class="text normal">
-              <h1>What Is IPF Progression?</h1>
+              <h1>What Is ILD Progression?</h1>
             </div>
           </div>
         </div>
@@ -18,24 +18,29 @@
     </div>
   </nav>
   <div class="container-fluid main">
-    <div class="row overflow-hidden">
+    <div class="row">
       <div class="container content">
         <div class="row position-relative justify-content-center">
-          <div class="text copy col-lg-9">
-            <p>Before learning about how IPF progresses, let’s start by defining what progression is. Progression means
-              that IPF will continue to worsen over time and cause permanent and irreversible damage to the lungs. This
-              progression can present itself many different ways.</p>
-            <br>
-            <p>Some people may notice worsening symptoms, see changes in <a tabindex="-1" [routerLink]="" hint-data="hint-1" (focusout)="focusoutTooltip($event.target)" (click)="showTooltip($event.target)">tests <img src="assets/icons/plus.png" alt=""></a>, like high-resolution computed
-              tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
-              may not notice any signs of progression for a long time.</p>
+          <div class="col">
+            <div class="text copy">
+              <p>Sometimes, ILD can cause scarring of the lungs (called pulmonary fibrosis) that gets worse, or progresses, over time.  You may hear this referred to as having a chronic ILD with worsening fibrosis.</p>
+              <br>
+              <p>Progression in chronic ILD can present itself many different ways.</p>
+              <br>
+              <p>Some people may notice worsening symptoms, see changes in <a tabindex="-1" [routerLink]=""
+                  hint-data="hint-1" (focusout)="focusoutTooltip($event.target)"
+                  (click)="showTooltip($event.target)">tests <img src="assets/icons/button-tooltip-inline.svg" alt=""></a>, like
+                high-resolution computed
+                tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
+                may not notice any signs of progression for a long time.</p>
+            </div>
           </div>
           <div tabindex class="hint col-lg-9" id="hint-1">
             <div class="arrow"></div>
             <div class="box">
-              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"></a>
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"><img src="assets/icons/button-tooltip-close.svg" alt=""></a>
               <h4>HELPFUL HINT</h4>
-              <p><strong class="orange">Tests</strong> used to detect IPF progression include:</p>
+              <p><strong class="mango-tango">Tests</strong> used to detect chronic ILD with worsening fibrosis include:</p>
               <ul>
                 <li>HRCT scans</li>
                 <li>Pulse oximetry (measured at rest and with exertion)</li>
@@ -44,7 +49,8 @@
                 <li>DLCO</li>
                 <li>Lung volume measurement (total lung capacity [TLC])</li>
                 <li>Arterial blood gas testing</li>
-                <li>Questionnaire, like the <i>University of California San Diego Shortness of Breath Questionnaire</i></li>
+                <li>Questionnaire, like the <i>University of California San Diego Shortness of Breath Questionnaire</i>
+                </li>
               </ul>
             </div>
           </div>
@@ -61,8 +67,10 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="text copy col-lg-9">
-            <p class="last">No matter how IPF affects you, it’s important to understand that <strong>the disease is always progressing at varying rates, which is why it’s so important to take action early.</strong></p>
+          <div class="col">
+            <div class="text copy">
+              <p>No matter how chronic ILD with worsening fibrosis affects you, <strong>it’s important to understand what’s happening inside your body so you can take action and make informed decisions about your care.</strong></p>
+            </div>
           </div>
         </div>
       </div>
@@ -70,11 +78,41 @@
   </div>
   <footer class="container-fluid">
     <div class="row">
-      <div class="container content">
-        <div class="row justify-content-center">
-          <div class="callout col-lg-9">
-            <h3>Take action by reading about a treatment that may help slow IPF progression.</h3>
-            <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read More Here</a>
+      <div class="container content py-3 py-md-4">
+        <div class="row justify-content-center callout">
+          <div class="col-12 text-center mb-3 mb-md-4">
+            <h3>Take action by reading about your management options for chronic ILD <br class="d-none d-lg-inline-block" />with worsening fibrosis and IPF, a common type of ILD.</h3>
+          </div>
+          <!-- <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read More Here</a> -->
+          <div class="col-9 col-md-7 col-lg-6 left">
+            <a href="/ild-progression-management" class="cta cta-negative">
+              <div class="cta-container">
+                <div class="cta-icon">
+                  <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">
+                </div>
+                <div class="cta-text-carat">
+                  <div class="cta-text">
+                    Read about managing chronic ILD with <br />worsening fibrosis
+                  </div>
+                  <div class="cta-carat"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-9 col-md-7 col-lg-6 right mt-3 mt-md-4 mt-lg-0">
+            <a href="/" class="cta cta-negative">
+              <div class="cta-container">
+                <div class="cta-icon">
+                  <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">
+                </div>
+                <div class="cta-text-carat">
+                  <div class="cta-text">
+                    Read about managing <br />IPF
+                  </div>
+                  <div class="cta-carat"></div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

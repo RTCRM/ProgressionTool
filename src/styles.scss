@@ -1,9 +1,4 @@
-/* Imports */
-
-// @import url('https://fonts.googleapis.com/css?family=Lora');
-
 /* Fonts */
-
 @font-face {
     font-family: "Lato Heavy";
     src: url("assets/fonts/Lato-Heavy.ttf");
@@ -25,11 +20,12 @@
 }
 
 @import "assets/scss/variables.scss";
+@import "assets/scss/main-site.scss";
 @import "assets/scss/fancybox.scss";
+@import "assets/scss/bootstrap-grid.scss";
 
 /* Global Styles */
 body {
-    padding-top: 70px; // Nav Height
     font-family: $lato;
 }
 h1 {
@@ -44,7 +40,7 @@ h4 {
 }
 p {
     font-family: $lato;
-    color: #4d4d4d;
+    color: $zambezi;
 }
 strong {
     font-family: $lato-heavy;
@@ -52,10 +48,13 @@ strong {
 a {
     position: relative;
     font-family: $lato-heavy;
-    color: $orange;
+    color: $mango-tango;
     &:hover {
-        color: $orange;
+        color: $mango-tango;
         text-decoration: none;
+    }
+    &:focus {
+        outline: none;
     }
 }
 ul {
@@ -68,7 +67,7 @@ ul {
         }
         &:before {
             content: "\2022";
-            color: #44a691;
+            color: $gossamer;
             font-weight: bold;
             display: inline-block; 
             width: 1em;
@@ -77,30 +76,22 @@ ul {
           }
     }
 }
-.main-nav, .main-footer {
+.main-nav {
+
+}
+.main-footer {
     overflow: hidden;
 }
-.orange {
-    color: $orange;
+.mango-tango {
+    color: $mango-tango;
 }
 .lora {
     font-family: $lora;
 }
 
-//Temp
-.grid-overlay div[class^='col-'] h1 {
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
-    background-color: unset !important;
-    // background-color: rgba(255, 0, 0, 0.1);
-}
-.grid-overlay div[class^='col-'] {
-    border: none !important;
-}
-
 //Overrides
 
-@media only screen and (max-width: 1024.98px) {
+@media only screen and (max-width: 1023.98px) {
     body {
         cursor: pointer;
     }
@@ -113,6 +104,10 @@ ul {
     .container, .container-fluid, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto {
         padding-right: $mobile-padding;
         padding-left: $mobile-padding;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
     }
     .row {
         margin-right: -$mobile-margin;

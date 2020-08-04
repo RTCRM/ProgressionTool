@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'progression-tool'`, () => {
+  it(`should have as title 'understanding-ild-progression'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('progression-tool');
+    expect(app.title).toEqual('understanding-ild-progression');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to progression-tool!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to understanding-ild-progression!');
   });
 });
