@@ -1,6 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef, ChangeDetectorRef} from '@angular/core';
 import { GridService } from '../services/grid.service';
-import { AnalyticsService } from '../services/analytics.service';
+// import { AnalyticsService } from '../services/analytics.service';
 import { ScrollService } from '../services/scroll.service';
 
 @Component({
@@ -9,39 +9,50 @@ import { ScrollService } from '../services/scroll.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
+  @ViewChild('iframe') iframe: ElementRef;
 
-  isOpen:Boolean = false;
-  transparent:Boolean = true;
-  bgSolid:Boolean = false;
-  disappear:Boolean;
-  iniPos: Number;
+  isOpen = false;
+  transparent = true;
+  bgSolid = false;
+  disappear: boolean;
+  iniPos: number;
+  url = '../sign-up-iframe';
+  // url = 'http://localhost:8080/sign-up-iframe';
+  doc;
+  win;
+  isSignUpOpen = false;
 
-  constructor(private renderer: Renderer2, private grid: GridService, private analytics: AnalyticsService, private scroll: ScrollService) { }
+  constructor(private renderer: Renderer2, private ref: ChangeDetectorRef, private grid: GridService, private scroll: ScrollService) {
+    (window as any).update = this.update.bind(this);
+   }
 
   ngOnInit() {
 
-    this.iniPos = this.scroll.iniPos;
-    this.transparent = this.iniPos <= 65 ? true : false;
-    this.bgSolid = this.iniPos > 240 ? true : false;
+  this.doc = this.iframe.nativeElement.contentDocument || this.iframe.nativeElement.contentWindow;
+  this.win = this.iframe.nativeElement.contentWindow;
 
-    this.scroll.transparent
-      .subscribe(
-        (transparent: Boolean) => {
-          this.transparent = transparent;
-        }
-      );
-    this.scroll.bgSolid
-      .subscribe(
-        (bgSolid: Boolean) => {
-          this.bgSolid = bgSolid;
-        }
-      );
-    this.scroll.disappear
-      .subscribe(
-        (disappear: Boolean) => {
-          this.disappear = disappear;
-        }
-      );
+  this.iniPos = this.scroll.iniPos;
+  this.transparent = this.iniPos <= 65 ? true : false;
+  this.bgSolid = this.iniPos > 240 ? true : false;
+
+  this.scroll.transparent
+    .subscribe(
+      (transparent: boolean) => {
+        this.transparent = transparent;
+      }
+    );
+  this.scroll.bgSolid
+    .subscribe(
+      (bgSolid: boolean) => {
+        this.bgSolid = bgSolid;
+      }
+    );
+  this.scroll.disappear
+    .subscribe(
+      (disappear: boolean) => {
+        this.disappear = disappear;
+      }
+    );
   }
 
   showGrid() {
@@ -61,5 +72,16 @@ export class NavComponent implements OnInit {
   // showMenu() {
   //   $('app-mobile-menu ul').toggle('slow');
   // }
+
+  fireHierarchicalTransition() {
+    this.isSignUpOpen = !this.isSignUpOpen;
+    this.win.open();
+  }
+
+  update() {
+    console.log('update');
+    this.isSignUpOpen = !this.isSignUpOpen;
+    this.ref.detectChanges();
+  }
 
 }

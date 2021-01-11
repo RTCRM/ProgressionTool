@@ -23,15 +23,15 @@
         <div class="row position-relative justify-content-center">
           <div class="col">
             <div class="text copy">
-              <p>Sometimes, ILD can cause scarring of the lungs (called pulmonary fibrosis) that gets worse, or progresses, over time.  You may hear this referred to as having a chronic ILD with worsening fibrosis.</p>
+              <p>ILD may cause scarring of the lungs (called pulmonary fibrosis) that gets worse, or progresses, over time.  You may hear this referred to as having a chronic ILD with worsening fibrosis.</p>
               <br>
               <p>Progression in chronic ILD can present itself many different ways.</p>
               <br>
               <p>Some people may notice worsening symptoms, see changes in <a tabindex="-1" [routerLink]=""
-                  hint-data="hint-1" (focusout)="focusoutTooltip($event.target)"
+                  hint-data="hint-1" (focusout)="focusoutTooltip($event.target)" class="gtm-in-text-link"
                   (click)="showTooltip($event.target)">tests <img src="assets/icons/button-tooltip-inline.svg" alt=""></a>, like
                 high-resolution computed
-                tomography (HRCT) scans or diffusing capacity (DLCO), or have to go on supplemental oxygen, while others
+                tomography (HRCT) scans or lung function tests, or have to go on supplemental oxygen, while others
                 may not notice any signs of progression for a long time.</p>
             </div>
           </div>
@@ -46,7 +46,7 @@
                 <li>Pulse oximetry (measured at rest and with exertion)</li>
                 <li>Exercise/walking tests</li>
                 <li>Spirometry (forced vital capacity [FVC]) </li>
-                <li>DLCO</li>
+                <li>Diffusing capacity of the lung for carbon monoxide (DLCO)</li>
                 <li>Lung volume measurement (total lung capacity [TLC])</li>
                 <li>Arterial blood gas testing</li>
                 <li>Questionnaire, like the <i>University of California San Diego Shortness of Breath Questionnaire</i>
@@ -81,26 +81,26 @@
       <div class="container content py-3 py-md-4">
         <div class="row justify-content-center callout">
           <div class="col-12 text-center mb-3 mb-md-4">
-            <h3>Take action by reading about your management options for chronic ILD <br class="d-none d-lg-inline-block" />with worsening fibrosis and IPF, a common type of ILD.</h3>
+            <h3>Learn how disease progression affects the body.</h3>
           </div>
           <!-- <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read More Here</a> -->
-          <div class="col-9 col-md-7 col-lg-6 left">
-            <a href="/ild-progression-management" class="cta cta-negative">
+          <div class="col-9 col-md-7 col-lg-6">
+            <a href="#how-disease-progression-affects" class="cta cta-negative gtm-cta">
               <div class="cta-container">
                 <div class="cta-icon">
                   <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">
                 </div>
                 <div class="cta-text-carat">
                   <div class="cta-text">
-                    Read about managing chronic ILD with <br />worsening fibrosis
+                    Read More.
                   </div>
                   <div class="cta-carat"></div>
                 </div>
               </div>
             </a>
           </div>
-          <div class="col-9 col-md-7 col-lg-6 right mt-3 mt-md-4 mt-lg-0">
-            <a href="/" class="cta cta-negative">
+          <!-- <div class="col-9 col-md-7 col-lg-6 right mt-3 mt-md-4 mt-lg-0">
+            <a href="/how-to-manage-ipf" class="cta cta-negative gtm-cta">
               <div class="cta-container">
                 <div class="cta-icon">
                   <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">
@@ -113,7 +113,7 @@
                 </div>
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

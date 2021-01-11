@@ -85,7 +85,7 @@
 							<h6>LIVING WITH ILD</h6>
 							<div>
 								<ul class="list-unstyled">
-									<li><a href="#">Explore Articles</a></li>
+									<li><a href="/explore-articles">Explore Articles</a></li>
 								</ul>
 							</div>
 						</div>
@@ -121,7 +121,7 @@
 							</div>
 
 							<div class="col-10 offset-1 col-md-5 offset-md-0 mt-2 mt-md-0">
-								<a href="/signup" class="cta cta-positive gtm-signup">
+								<a [routerLink]="" class="cta cta-positive gtm-signup" (click)="fireHierarchicalTransition()">
 									<div class="cta-container">
 										<div class="cta-icon">
 											<img src="./assets/main-site/desktop-icon-standard-button-positive-sign-up.svg"
@@ -144,3 +144,5 @@
 	</div>
 	<!-- End of Overlay -->
 </header>
+
+<iframe #iframe [src]="url | safe" frameborder="0" [ngClass]="{'open': isSignUpOpen}"></iframe>

@@ -1,201 +1,243 @@
 @import "src/assets/scss/section.scss";
 
 section {
-    padding-top: 50px;
-    nav {
-        background: url('/assets/heroes/section3-hero.jpg') center top no-repeat;
-        .content {
-            .title {
-                .text {
-                    // padding: 39px 44px 37px;
-                }
-            }
+  padding-top: 50px;
+  nav {
+    background: url("/assets/heroes/section3-hero.jpg") center top no-repeat;
+    .content {
+      .title {
+        .text {
+          // padding: 39px 44px 37px;
         }
+      }
+    }
+  }
+  .main {
+    padding-bottom: 250px;
+    background: url("/assets/heroes/section3-footer.jpg") center bottom
+      no-repeat;
+    background-size: 100%;
+    .content {
+      .row {
+        .copy:first-of-type {
+          margin-bottom: 50px;
+        }
+        .text {
+          a {
+            white-space: nowrap;
+          }
+        }
+        .animation {
+          position: absolute;
+          top: 0;
+          img {
+            width: 100%;
+            &:not(:first-of-type) {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+          div {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          &.fixed {
+            position: fixed;
+            top: 70px;
+          }
+          &.absolute {
+            position: absolute;
+            top: auto;
+            bottom: 0;
+          }
+        }
+        .hint {
+          margin-top: 55px;
+          .arrow {
+            margin-left: 205px;
+          }
+        }
+        #placeholder-20-1 {
+          margin-top: -165px;
+        }
+        #animation-3-1-end,
+        #animation-3-2-end,
+        #animation-3-3-end {
+          height: auto;
+        }
+        .block-text {
+          .big {
+            font: 24px/38px $lora;
+          }
+        }
+        .quote {
+          margin: 34px 0 80px;
+          .box {
+            padding: $normal-line-height 50px;
+          }
+        }
+        #slide-21 {
+          background-image: url("/assets/arrows/animation-1-spritesheet.png");
+          background-size: cover;
+        }
+        #slide-24 {
+          background-image: url("/assets/arrows/animation-2-spritesheet.png");
+          background-size: cover;
+        }
+      }
+    }
+  }
+  footer {
+    // margin-top: 250px;
+    .content {
+      .callout {
+        // h3 {
+        //     margin-top: 48px;
+        // }
+        // a {
+        //     width: 59.7%;
+        //     margin: 28px 0 48px;
+        // }
+      }
+    }
+  }
+}
+//Desktop lg
+@media only screen and (max-width: 1199.98px) {
+  section {
+    .main {
+      .content {
+        .row {
+          .hint {
+            .arrow {
+              margin-left: 175px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1023.98px) {
+  section {
+    padding-top: 35px;
+    nav {
+      .content {
+        .title {
+          .text {
+            padding: 39px 30px 37px;
+          }
+        }
+      }
     }
     .main {
-        padding-bottom: 250px;
-        background: url('/assets/heroes/section3-footer.jpg') center bottom no-repeat;
-        background-size: 100%;
-        .content {
-            .row {
-                .copy:first-of-type {
-                    margin-bottom: 50px;
-                }
-                .animation {
-                    position: absolute;
-                    top: 0;
-                    img {
-                        width: 100%;
-                        &:not(:first-of-type) {
-                            position: absolute;
-                            top : 0;
-                            left: 0;
-                        }
-                    }
-                    div {
-                        width: 100%;
-                        position: absolute;
-                        top : 0;
-                        left: 0;
-                    }
-                    &.fixed {
-                        position: fixed;
-                        top: 70px;
-                    }
-                    &.absolute {
-                        position: absolute;
-                        top: auto;
-                        bottom: 0;
-                    }
-                }
-                #placeholder-20-1 {
-                    margin-top: -165px;
-                }
-                #animation-3-1-end, #animation-3-2-end, #animation-3-3-end {
-                    height: auto;
-                }
-                .block-text {
-                    .big {
-                        font: 24px/38px $lora;
-                    }
-                }
-                .quote {
-                    margin: 34px 0 80px;
-                    .box {
-                        padding: $normal-line-height 50px;
-                    }
-                }
-                #slide-21 {
-                    background-image: url('/assets/arrows/animation-1-spritesheet.png');
-                    background-size: cover;
-                }
-                #slide-24 {
-                    background-image: url('/assets/arrows/animation-2-spritesheet.png');
-                    background-size: cover;
-                }
+      padding-bottom: 180px;
+      .content {
+        .row {
+          #slide-24 {
+            background-image: url("/assets/arrows/animation-2-spritesheet-m.png");
+          }
+          .hint {
+            .arrow {
+              margin-left: 75px;
             }
+          }
         }
+      }
     }
     footer {
-        // margin-top: 250px;
-        .content {
-            .callout {
-                // h3 {
-                //     margin-top: 48px;         
-                // }
-                // a {
-                //     width: 59.7%;
-                //     margin: 28px 0 48px;
-                // }
-            }
+      .content {
+        .callout {
+          // a {
+          //     width: 80%;
+          // }
         }
+      }
     }
-}
-
-@media only screen and (max-width: 1023.98px) {
-    section {
-        padding-top: 35px;
-        nav {
-            .content {
-                .title {
-                    .text {
-                        padding: 39px 30px 37px;
-                    }
-                }
-            }
-        }
-        .main {
-            padding-bottom: 180px;
-            .content {
-                .row {
-                    #slide-24 {
-                        background-image: url('/assets/arrows/animation-2-spritesheet-m.png');
-                    }
-                }
-            }
-        }
-        footer {
-            .content {
-                .callout {
-                    // a {
-                    //     width: 80%;
-                    // }
-                }
-            }
-        }
-    }
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
-    section {
-        nav {
-            .content {
-                .title {
-                    .text {
-                        padding: 20px 0;
-                    }
-                }
-            }
+  section {
+    nav {
+      .content {
+        .title {
+          .text {
+            padding: 20px 0;
+          }
         }
-        .main {
-            background: url('/assets/heroes/section3-mobile-footer.jpg') center bottom no-repeat;
-            background-size: 100%;
-            padding-bottom: 0;
-            .content {
-                .row {
-                    .placeholder.step#placeholder-19-3, .placeholder.step#placeholder-20-3 {
-                        height: 0;
-                    }
-                    .quote {
-                        margin: 40px 0 60px;
-                        .box {
-                            padding: 16px 20px;
-                        }
-                    }
-                    .copy:first-of-type {
-                        margin-bottom: 25px;
-                    }
-                    .animation {
-                        &.fixed {
-                            top: 47px;
-                        }
-                        &.absolute {
-                            top: initial;
-                        }
-                    }
-                    .mobile-mb {
-                        z-index: 1;
-                        margin-bottom: -35px;
-                    }
-                    .mobile-mt {
-                        z-index: 1;
-                        margin-top: -105px;
-                    }
-                }
-            }
-        }
-        footer {
-            .content {
-                .callout {
-                    // padding-right: $mobile-padding;
-                    // padding-left: $mobile-padding;
-                    // text-align: center;
-                    // h3 {
-                    //     width: 100%;
-                    //     margin-top: 20px;
-                    //     text-align: left;
-                    //     font-size: $mobile-font-size;
-                    //     line-height: $mobile-line-height;
-                    // }
-                    // a {
-                    //     width: auto;
-                    //     padding: 0 20px;
-                    //     margin: 20px 0;
-                    //     font-size: 3.47vw;
-                    //     line-height: 8.68vw;
-                    // }
-                }
-            }
-        }
+      }
     }
+    .main {
+      background: url("/assets/heroes/section3-mobile-footer.jpg") center bottom
+        no-repeat;
+      background-size: 100%;
+      padding-bottom: 0;
+      .content {
+        .row {
+          .placeholder.step#placeholder-19-3,
+          .placeholder.step#placeholder-20-3 {
+            height: 0;
+          }
+          .quote {
+            margin: 40px 0 60px;
+            .box {
+              padding: 16px 20px;
+            }
+          }
+          .copy:first-of-type {
+            margin-bottom: 25px;
+          }
+          .animation {
+            &.fixed {
+              top: 47px;
+            }
+            &.absolute {
+              top: initial;
+            }
+          }
+          .mobile-mb {
+            z-index: 1;
+            margin-bottom: -35px;
+          }
+          .mobile-mt {
+            z-index: 1;
+            margin-top: -105px;
+          }
+          .hint {
+            margin-top: -110px;
+            .arrow {
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
+    footer {
+      .content {
+        .callout {
+          // padding-right: $mobile-padding;
+          // padding-left: $mobile-padding;
+          // text-align: center;
+          // h3 {
+          //     width: 100%;
+          //     margin-top: 20px;
+          //     text-align: left;
+          //     font-size: $mobile-font-size;
+          //     line-height: $mobile-line-height;
+          // }
+          // a {
+          //     width: auto;
+          //     padding: 0 20px;
+          //     margin: 20px 0;
+          //     font-size: 3.47vw;
+          //     line-height: 8.68vw;
+          // }
+        }
+      }
+    }
+  }
 }

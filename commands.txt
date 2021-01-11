@@ -1,4 +1,4 @@
-ng build --base-href /understanding-ild-progression/ --deploy-url /understanding-ild-progression/ --prod
+ng build --base-href /ild-progression/ --deploy-url /ild-progression/ --prod
 
 ng g component component-name
 

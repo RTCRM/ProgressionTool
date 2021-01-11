@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TooltipService } from '../services/tooltip.service';
 import { InterstitialService } from '../services/interstitial.service';
-import { AnalyticsService } from '../services/analytics.service';
+// import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
   selector: 'app-section1',
@@ -10,7 +10,7 @@ import { AnalyticsService } from '../services/analytics.service';
 })
 export class Section1Component implements OnInit {
 
-  constructor(private tooltip: TooltipService, private external: InterstitialService, private analytics: AnalyticsService) { }
+  constructor(private tooltip: TooltipService, private external: InterstitialService) { }
 
   ngOnInit() {
   }
@@ -28,7 +28,7 @@ export class Section1Component implements OnInit {
   }
 
   openExternal($event: Event) {
-    this.analytics.click('Learn about a Treatment for IPF', 'Exit Link', 'click_1');
+    // this.analytics.click('Learn about a Treatment for IPF', 'Exit Link', 'click_1');
     this.external.open($event);
   }
 }

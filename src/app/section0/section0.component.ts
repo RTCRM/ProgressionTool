@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+// import { AnalyticsService } from '../services/analytics.service';
 
 @Component({
   selector: 'app-section0',
@@ -12,4 +13,8 @@ export class Section0Component implements OnInit {
   ngOnInit() {
   }
 
+  share(service: string) {
+    $('.at-svc-' + service)[0].click();
+    // this.analytics.click(service, 'Progression Tool', 'share');
+  }
 }

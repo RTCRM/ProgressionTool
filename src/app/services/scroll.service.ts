@@ -1,5 +1,5 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { AnalyticsService } from './analytics.service';
+// import { AnalyticsService } from './analytics.service';
 import { EventEmitter } from '@angular/core';
 // import * as global from './global';
 
@@ -7,9 +7,9 @@ import { EventEmitter } from '@angular/core';
   providedIn: 'root'
 })
 export class ScrollService {
-  transparent = new EventEmitter<Boolean>();
-  bgSolid = new EventEmitter<Boolean>();
-  disappear = new EventEmitter<Boolean>();
+  transparent = new EventEmitter<boolean>();
+  bgSolid = new EventEmitter<boolean>();
+  disappear = new EventEmitter<boolean>();
   width: number;
   navHeight: number;
   locked = false;
@@ -30,7 +30,7 @@ export class ScrollService {
     target: $()
   }];
 
-  constructor(private analytics: AnalyticsService) { }
+  constructor() { }
 
   initialPos(pos: number) {
     this.iniPos = pos;
@@ -39,9 +39,7 @@ export class ScrollService {
 
   scrollProgress(pos: number) {
     // console.log('pos:', pos);
-    
-    if (this.navCounter == 3) this.nav(pos);
-    else this.navCounter++;
+    (this.navCounter === 3) ? this.nav(pos) : this.navCounter++;
     // Menu Items
     this.menu(pos);
     this.active($('app-section0 nav .title'), $('app-nav nav'), pos);
@@ -298,7 +296,7 @@ export class ScrollService {
       if (pos >= (i > 0 ? Math.floor($('app-section' + i + ' nav').offset().top - 70) : 0) && pos < (i < 6 ? Math.floor($('app-section' + (i + 1) + ' nav').offset().top - 70) : $('app-footer').offset().top)) {
         if (!$('app-side-nav .section-' + i).hasClass('active')) {
           if (!this.locked) {
-            this.analytics.click(i > 0 ? 'Section ' + i : 'Home', 'Progression Tool', 'scroll');
+            // this.analytics.click(i > 0 ? 'Section ' + i : 'Home', 'Progression Tool', 'scroll');
           } else {
             this.unlock();
           }

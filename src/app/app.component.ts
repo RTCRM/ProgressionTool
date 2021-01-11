@@ -1,8 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ScrollService } from './services/scroll.service';
 import { WindowService } from './services/window.service';
-import { AnimationService } from './services/animation.service';
-import { MetaService } from './services/meta.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'understanding-ild-progression';
 
   // tslint:disable-next-line:max-line-length
-  constructor(private scroll: ScrollService, private window: WindowService, private animation: AnimationService, private meta: MetaService) { }
+  constructor(private scroll: ScrollService, private window: WindowService) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll($event: Event) {

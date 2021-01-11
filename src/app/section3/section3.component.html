@@ -112,20 +112,41 @@
             <img src="assets/elements/lungs000-3.png" id="slide-0" class="slide-base" alt="">
           </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row position-relative justify-content-center">
           <div class="text block-text full-block-mobile mobile-mt col-7">
             <p>When chronic ILD with worsening fibrosis first begins, you may not experience any symptoms, like shortness of breath and coughing.
               Therefore, it’s important to remember that symptoms are not the only indication of what could be occurring inside your body. </p>
             <br/>
             <p class="big"><strong>Even without symptoms present, chronic ILD with fibrosis may still be worsening and causing irreparable damage to your lungs.</strong></p>
             <br/>
-            <p>Additionally, progression doesn’t always show up on HRCT scans, which is why it’s important that other tests are performed.</p>
+            <p>Additionally, progression doesn’t always show up on HRCT scans, which is why it’s important that other <a tabindex="-1" [routerLink]="" hint-data="hint-2" class="gtm-in-text-link" (focusout)="focusoutTooltip($event.target)"
+              (click)="showTooltip($event.target)">tests <img src="assets/icons/button-tooltip-inline.svg" alt=""></a> are performed in order to monitor for progression.</p>
           </div>
           <div class="quote col-md-10">
             <div class="box">
               <p>“When I was diagnosed, my IPF had already progressed quite a bit."</p>
               <br/>
               <p>&mdash; Gene<span class="small">, PERSON LIVING WITH</span><span> IPF</span><span class="small">, A COMMON TYPE OF</span><span> ILD</span></p>
+            </div>
+          </div>
+          <div class="hint col-lg-9" id="hint-2">
+            <div class="arrow"></div>
+            <div class="box">
+              <a [routerLink]="" class="tooltip-close" (click)="hideTooltip($event.target)"><img
+                  src="assets/icons/button-tooltip-close.svg" alt=""></a>
+              <h4>HELPFUL HINT</h4>
+              <p><strong class="mango-tango">Tests</strong> used to detect the progression of chronic ILD with worsening fibrosis
+                include:</p>
+              <ul>
+                <li>HRCT scans</li>
+                <li>Pulse oximetry (measured at rest and with exertion)</li>
+                <li>Exercise/walking tests</li>
+                <li>Spirometry (forced vital capacity [FVC]) </li>
+                <li>Diffusing capacity of the lung for carbon monoxide (DLCO)</li>
+                <li>Lung volume measurement (total lung capacity [TLC])</li>
+                <li>Arterial blood gas testing</li>
+                <li>Questionnaire, like the <i>University of California San Diego Shortness of Breath Questionnaire</i></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -141,7 +162,7 @@
           </div>
           <!-- <a href="https://www.ofev.com/about-ofev" (click)="openExternal($event.target)">Read More Here</a> -->
           <div class="col-9 col-md-7 col-lg-6 left">
-            <a href="/ild-progression-management" class="cta cta-negative">
+            <a href="/ild-progression-management" class="cta cta-negative gtm-cta">
               <div class="cta-container">
                 <div class="cta-icon">
                   <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">
@@ -156,7 +177,7 @@
             </a>
           </div>
           <div class="col-9 col-md-7 col-lg-6 right mt-3 mt-md-4 mt-lg-0">
-            <a href="/" class="cta cta-negative">
+            <a href="/how-to-manage-ipf" class="cta cta-negative gtm-cta">
               <div class="cta-container">
                 <div class="cta-icon">
                   <img src="./assets/main-site/desktop-icon-standard-button-negative-read.svg" alt="">

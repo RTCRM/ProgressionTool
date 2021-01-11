@@ -22,12 +22,17 @@ section {
             }
         }
     }
+    .main {
+        .content {
+            margin-top: 25px;
+        }
+    }
 }
 
 //Desktop
 @media (min-width: 1024px) { 
     section nav .content {
-        height: 658px;
+        height: 584px;
         .title .text h1 {
             background: url('/assets/elements/down-arrows.png') top right no-repeat;
         }
