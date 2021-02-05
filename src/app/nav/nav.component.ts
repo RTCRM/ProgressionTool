@@ -16,8 +16,8 @@ export class NavComponent implements OnInit {
   bgSolid = false;
   disappear: boolean;
   iniPos: number;
-  url = '../sign-up-iframe';
-  // url = 'http://localhost:8080/sign-up-iframe';
+  // url = '../sign-up-iframe';
+  url = 'http://localhost:8080/sign-up-iframe';
   doc;
   win;
   isSignUpOpen = false;
