@@ -124,10 +124,10 @@ export class ScrollService {
     this.fadeMid($('#square-7'), 100, 100, 0, 1, pos);
     this.fadeMid($('#square-8'), 50, 100, 0, 1, pos);
     this.fadeMid($('#square-9'), 0, 100, 0, 1, pos);
-    this.fadeMid($('#ladder-step1'), 100, 100, 0, 1, pos);
-    this.fadeMid($('#ladder-step2'), 100, 100, 0, 1, pos);
-    this.fadeMid($('#ladder-step3'), 100, 100, 0, 1, pos);
-    this.fadeMid($('#ladder-step4'), 100, 100, 0, 1, pos);
+    // this.fadeMid($('#ladder-step1'), 100, 100, 0, 1, pos);
+    // this.fadeMid($('#ladder-step2'), 100, 100, 0, 1, pos);
+    // this.fadeMid($('#ladder-step3'), 100, 100, 0, 1, pos);
+    // this.fadeMid($('#ladder-step4'), 100, 100, 0, 1, pos);
 
     /* Section 5 */
     this.play($('#video-5-1'), true, pos);
