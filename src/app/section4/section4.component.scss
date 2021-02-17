@@ -4,9 +4,57 @@ section {
   // padding-top: 50px;
   nav {
     background: url("/assets/heroes/section4-hero.jpg") center top no-repeat;
+    .hero-disclaimer {
+      &.single:after,
+      &.multiples:after {
+        @media (max-width: 767.98px) {
+          bottom: 159px;
+        }
+        @media (min-width: 768px) and (max-width: 1023.98px) {
+          bottom: 266px;
+        }
+        @media (min-width: 1024px) and (max-width: 1199.98px) {
+          bottom: 204px;
+        }
+        @media (min-width: 1200px) {
+          bottom: 202px;
+        }
+      }
+      &.single:before,
+      &.multiples:before {
+        @media (max-width: 767.98px) {
+          bottom: 121px;
+        }
+        @media (min-width: 768px) and (max-width: 1023.98px) {
+          bottom: 229px;
+        }
+        @media (min-width: 1024px) and (max-width: 1199.98px) {
+          bottom: 167px;
+        }
+        @media (min-width: 1200px) {
+          bottom: 165px;
+        }
+      }
+    }
+    // .hero-disclaimer {
+    //   &.single:after,
+    //   &.multiples:after {
+    //     bottom: 163px;
+    //   }
+    //   &.single:before,
+    //   &.multiples:before {
+    //     bottom: 121px;
+    //   }
+    // }
   }
   .main {
     .content {
+      &.hero-disclaimer {
+        &.single:after,
+        &.multiples:after {
+          // bottom: 163px;
+        }
+      }
       .row {
         text {
           padding: 30px 50px;

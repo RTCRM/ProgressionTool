@@ -4,10 +4,23 @@ section {
   padding-top: 50px;
   nav {
     background: url("/assets/heroes/section3-hero.jpg") center top no-repeat;
-    .content {
-      .title {
-        .text {
-          // padding: 39px 44px 37px;
+    .hero-disclaimer {
+      &.single:after,
+      &.multiples:after {
+        @media (max-width: 767.98px) {
+          bottom: 86px;
+        }
+        @media (min-width: 768px) and (max-width: 1023.98px) {
+          bottom: 133px;
+        }
+      }
+      &.single:before,
+      &.multiples:before {
+        @media (max-width: 767.98px) {
+          bottom: 78px;
+        }
+        @media (min-width: 768px) and (max-width: 1023.98px) {
+          bottom: 91px;
         }
       }
     }

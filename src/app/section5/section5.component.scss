@@ -1,112 +1,115 @@
 @import "src/assets/scss/section.scss";
 
 section {
-    nav {
-        background: url('/assets/heroes/section5-hero.jpg') center top no-repeat;
-        .content {
-            // height: initial;
-            .title {
-                // position: initial;
-                .text {
-                    background-color: #666;
-                    h1 {
-                        color: #fff;
-                    }
-                }
-            }
-        }
+  nav {
+    background: url("/assets/heroes/section5-hero.jpg") center top no-repeat;
+    .hero-disclaimer > .row > .title {
+      background-color: #666;
     }
-    .main {
-        background-color: #666;
-        padding-bottom: 50px;
-        .content {
-            // margin-top: initial;
-            .row {
-                p {
-                    color: #fff;
-                }
-                .copy {
-                    .big {
-                        font-size: $normal-font-size;
-                        line-height: 42px;
-                    }
-                }
-                .video {
-                    margin-bottom: 75px;
-                    video {
-                        position: relative;
-                        width: 100%;
-                        overflow: auto;
-                    }
-                    .label {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        -webkit-transform: translateX(-50%) translateY(-50%);
-                        transform: translateX(-50%) translateY(-50%);
-                        font: 24px/30px $lora;
-                        text-align: center;
-                        white-space: nowrap;
-                        margin-bottom: 0;
-                    }
-                    &.first {
-                        margin-top: 55px;
-                    }
-                }
-                img {
-                    width: 100%;
-                }
-            }
+    .content {
+      // height: initial;
+      .title {
+        // position: initial;
+        .text {
+          background-color: #666;
+          h1 {
+            color: #fff;
+          }
         }
+      }
     }
+  }
+  .main {
+    background-color: #666;
+    padding-bottom: 50px;
+    .content {
+      // margin-top: initial;
+      .row {
+        p {
+          color: #fff;
+        }
+        .copy {
+          .big {
+            font-size: $normal-font-size;
+            line-height: 42px;
+          }
+        }
+        .video {
+          margin-bottom: 75px;
+          video {
+            position: relative;
+            width: 100%;
+            overflow: auto;
+          }
+          .label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            font: 24px/30px $lora;
+            text-align: center;
+            white-space: nowrap;
+            margin-bottom: 0;
+          }
+          &.first {
+            margin-top: 55px;
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 //Tablet
 @media only screen and (max-width: 1023.98px) {
-    section {
-        nav {
-            background-position: center right 20%;
-            margin-bottom: -1px;
-        }
+  section {
+    nav {
+      background-position: center right 20%;
+      margin-bottom: -1px;
     }
+  }
 }
 
 //Mobile
 @media only screen and (max-width: 767.98px) {
-    section {
-        nav {
-            // background-position-x: right;
-            .content {
-                background-color: #666;
-            }
-        }
-        .main {
-            background-color: #666;
-            .content {
-                .row {
-                    .copy {
-                        .big {
-                            font-size: $mobile-font-size;
-                            line-height: 7.64vw;
-                            &.lora {
-                                font-size: 4.86vw;
-                            }
-                        }
-                    }
-                    .video {
-                        .label {
-                            font-size: 4.2vw;
-                        }
-                        &.first {
-                            margin-top: 30px;
-                            .label {
-                                white-space: normal;
-                            }
-                        }
-                        margin-bottom: 30px;
-                    }
-                }
-            }
-        }
+  section {
+    nav {
+      // background-position-x: right;
+      .content {
+        background-color: #666;
+      }
     }
+    .main {
+      background-color: #666;
+      .content {
+        .row {
+          .copy {
+            .big {
+              font-size: $mobile-font-size;
+              line-height: 7.64vw;
+              &.lora {
+                font-size: 4.86vw;
+              }
+            }
+          }
+          .video {
+            .label {
+              font-size: 4.2vw;
+            }
+            &.first {
+              margin-top: 30px;
+              .label {
+                white-space: normal;
+              }
+            }
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
 }
