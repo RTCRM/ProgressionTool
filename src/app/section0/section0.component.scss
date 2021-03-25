@@ -1,66 +1,67 @@
 @import "src/assets/scss/section.scss";
 
 section {
-    nav {
-        background: url('/assets/heroes/section0-hero.jpg') center top no-repeat;
-        .content {
-            .title {
-                .label {
-                    width: 0;
-                    height: 0;
-                }
-                .text {
-                    .scroll {
-                        position: absolute;
-                        right: 120px;
-                        bottom: 50px;
-                        margin-bottom: 0;
-                        font: 15px/18px $lato;
-                        color: $grey;
-                    }
-                }
-            }
+  nav {
+    background: url("/assets/heroes/understanding-ild-progression-hero.jpg")
+      center top no-repeat;
+    .content {
+      .title {
+        .label {
+          width: 0;
+          height: 0;
         }
-    }
-    .main {
-        .content {
-            margin-top: 25px;
+        .text {
+          .scroll {
+            position: absolute;
+            right: 120px;
+            bottom: 50px;
+            margin-bottom: 0;
+            font: 15px/18px $lato;
+            color: $grey;
+          }
         }
+      }
     }
+  }
+  .main {
+    .content {
+      margin-top: 25px;
+    }
+  }
 }
 
 //Desktop
-@media (min-width: 1024px) { 
-    section nav .content {
-        height: 584px;
-        .title .text h1 {
-            background: url('/assets/elements/down-arrows.png') top right no-repeat;
-        }
+@media (min-width: 1024px) {
+  section nav .content {
+    height: 584px;
+    .title .text h1 {
+      background: url("/assets/elements/down-arrows.png") top right no-repeat;
     }
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
-    section {
-        background-color: transparent;
-        nav {
-            .mobile-hero {
-                position: fixed;
-                z-index: -1;
+  section {
+    background-color: transparent;
+    nav {
+      .mobile-hero {
+        position: fixed;
+        z-index: -1;
+      }
+      .content {
+        .title {
+          bottom: 0;
+          .id {
+            margin-top: 0;
+          }
+          .text {
+            h1 {
+              font-size: 9.4vw;
+              line-height: 12vw;
             }
-            .content {
-                .title {
-                    bottom: 0;
-                    .id {
-                        margin-top: 0;
-                    }
-                    .text {
-                        h1 {
-                            font-size: 9.4vw;;
-                            line-height: 12vw;    
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }

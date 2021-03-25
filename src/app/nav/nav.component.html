@@ -1,39 +1,9 @@
-<!-- <nav class="container-fluid main-nav">
-  <div class="row">
-    <div id="logo">
-      <div id="lungs-and-you">
-          <a href="/" title="Lungs and You Logo">
-            <div id="logo-container"></div>
-          </a>
-      </div>
-    </div>
-    <div id="title">
-        <h1><span class="d-none d-lg-block">Understanding IPF Progression</span></h1>
-        <a [routerLink]="" (click)="showMenu()"></a>
-    </div>
-    <div id="social-media">
-      <div id="facebook">
-        <a [routerLink]="" (click)="share('facebook')">
-          <div id="facebook-icon-container"></div>
-        </a>
-      </div>
-      <div id="twitter">
-        <a [routerLink]="" (click)="share('twitter')">
-            <div id="twitter-icon-container"></div>
-        </a>
-      </div>
-    </div>
-  </div>
-</nav> -->
-
-<header id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top align-items-center p-0 main-nav" [ngClass]="{'disappear': disappear, 'transparent': transparent, 'bg-solid': bgSolid}">
+<header id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top align-items-center p-0 main-nav"
+	[ngClass]="{'disappear': disappear, 'transparent': transparent, 'bg-solid': bgSolid}">
 	<div id="site-navbar" class="container-fluid" [ngClass]="{'bg-blue-light': isOpen}">
 		<a class="navbar-brand mr-lg-5 mr-xl-7" href="/">
 			<img src="./assets/main-site/logo-lungsand-you.svg" class="d-block" alt="Lungs&You" width="120">
 		</a>
-		<!-- <div id="title">
-			<h1><span class="d-none d-lg-block">Understanding IPF Progression</span></h1>
-		</div> -->
 		<div>
 			<div id="menu-toggler" class="menu-toggle navigation" (click)="toggle()" [ngClass]="{'open': isOpen}">
 				<span></span>
@@ -55,7 +25,8 @@
 							<div>
 								<ul class="list-unstyled">
 									<li><a href="/what-is-ild">What Is ILD?</a></li>
-									<li><a href="/symptoms-comparison-tool">Compare ILD to Diseases with Similiar Symptoms</a></li>
+									<li><a href="/ild-symptoms-comparison-tool">Compare ILD to Diseases with Similiar
+											Symptoms</a></li>
 									<li><a href="/what-is-ipf">What Is IPF?</a></li>
 								</ul>
 							</div>
@@ -74,7 +45,7 @@
 							<h6>LIVING WITH ILD</h6>
 							<div>
 								<ul class="list-unstyled">
-									<li><a href="/understanding-ild-progression">Understanding ILD Progression </a></li>
+									<li><a href="/ild-progression/">Understanding ILD Progression </a></li>
 									<li><a href="/ild-progression-management">How to Manage Chronic ILD with Worsening
 											Fibrosis</a></li>
 									<li><a href="/ipf-progression-managment">How to Manage IPF</a></li>
@@ -85,7 +56,7 @@
 							<h6>ILD ARTICLES</h6>
 							<div>
 								<ul class="list-unstyled">
-									<li><a href="/explore-articles">Explore Articles</a></li>
+									<li><a href="/ild-articles">Explore Articles</a></li>
 								</ul>
 							</div>
 						</div>
@@ -93,8 +64,10 @@
 							<h6>SPREAD THE WORD</h6>
 							<div>
 								<ul class="list-unstyled">
-									<li><a href="/breathless-ipf">Bernie Williams Spreads the Word About IPF</a></li>
-									<li><a href="/queen-latifah">Queen Latifah Raises Awareness</a></li>
+									<li><a href="/spread-the-word/idiopathic-pulmonary-fibrosis">Bernie Williams Spreads
+											the Word About IPF</a></li>
+									<li><a href="/spread-the-word/scleroderma-associated-ild">Queen Latifah Raises
+											Awareness</a></li>
 								</ul>
 							</div>
 						</div>
@@ -105,27 +78,29 @@
 		<div class="my-4">
 			<div class="container bg-color-white">
 				<div class="row justify-content-center">
-					<div class="col-12 col-lg-11">
-						<div class="row">
+					<div class="col-12 col-lg-11" id="signup-menu-section">
+						<div class="row" [hidden]="isSuccess">
 							<div class="col-12 col-md-7">
 								<div>
-									<p class="font-weight-bold pt-3 pt-lg-0 font-lora">We know how lost you might feel while searching for answers about your health or ILD, but we’re here to support you. </p>
+									<p class="font-weight-bold pt-3 pt-lg-0 font-lora">We know how lost you might feel
+										while searching for answers about ILD and how it may progress over time, but
+										we’re here
+										to support you.</p>
 									<p class="pt-2 pt-lg-0 font-lora">
-										Sign up to have information about interstitial lung disease (ILD), including
-										real
-										stories
-										and encouragement from people living with the disease, sent right to your
-										inbox.
+										Sign up to have information about interstitial lung disease (ILD) and how it may
+										progress, including real stories and
+										encouragement from people living with the disease, sent right to your inbox.
 									</p>
 								</div>
 							</div>
 
 							<div class="col-10 offset-1 col-md-5 offset-md-0 mt-2 mt-md-0">
-								<a [routerLink]="" class="cta cta-positive gtm-signup" (click)="fireHierarchicalTransition()">
+								<a [routerLink]="" class="cta cta-positive gtm-signup"
+									(click)="fireHierarchicalTransition()">
 									<div class="cta-container">
 										<div class="cta-icon">
 											<img src="./assets/main-site/desktop-icon-standard-button-positive-sign-up.svg"
-												 alt="">
+												alt="">
 										</div>
 										<div class="cta-text-carat">
 											<div class="cta-text">
@@ -135,6 +110,61 @@
 										</div>
 									</div>
 								</a>
+							</div>
+						</div>
+						<div class="row justify-content-left justify-content-lg-center" id="printable-signup"
+							[hidden]="!isSuccess">
+							<div class="col-6 col-lg-3 order-lg-2 text-lg-center">
+								<img class="mt-lg-3" src="./assets/main-site/message.svg" alt="" width="141">
+							</div>
+							<div class="col-12 col-lg-9 pr-lg-3">
+								<div class="py-3 order-md-1">
+									<p class="font-lora fs-24 font-weight-bold"><strong>Thank You for Signing
+											Up</strong></p>
+									<p class="font-lora fs-21 fs-md-24 line-height-13">
+										Your story could help those who are going through something similar feel
+										less alone.</p>
+									<p class="font-lora fs-21 fs-md-24 line-height-13">Call <a href="tel: 18338782764"
+											class="orange-link text-decoration-none">833-878-2764</a>
+										to
+										schedule time to share your story.</p>
+									<p class="font-lora fs-21 fs-md-24 line-height-13">When you call, we’ll also be glad
+										to
+										provide you with further details
+										and answer your questions. Remember to
+										<a href="#" ng-click="app.printHtml($event, 'printable-signup')"
+											class="orange-link text-decoration-none">print</a> this page if you'd like
+										to keep a
+										record of the phone number to&nbsp;call.
+									</p>
+								</div>
+							</div>
+							<div class="row justify-content-center justify-content-lg-end align-items-center">
+								<div class="col-12 col-lg-6">
+									<h5 class="font-lora fs-20 fs-sm-24 font-weight-bolder">Looking for additional ILD
+										support?</h5>
+									<div class="mt-3 font-lora fs-20 fs-sm-24 mb-3 mb-lg-0">
+										Find articles that cover an array of topics—from how ILD may progress over time,
+										to practical advice on
+										living with ILD, to caregiver support.
+									</div>
+								</div>
+								<div class="col-9 col-md-8 col-lg-6 pl-lg-4">
+									<a href="/ild-articles" class="cta cta-positive gtm-cta">
+										<div class="cta-container">
+											<div class="cta-icon">
+												<img src="./assets/main-site/desktop-icon-standard-button-positive-read.svg"
+													alt="">
+											</div>
+											<div class="cta-text-carat">
+												<div class="cta-text">
+													Explore articles
+												</div>
+												<div class="cta-carat"></div>
+											</div>
+										</div>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
